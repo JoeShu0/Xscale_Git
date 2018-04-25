@@ -164,14 +164,15 @@ public class Torpedo_Movement : MonoBehaviour {
 
     public void Explode()
     {
+        Debug.Log(transform.gameObject.name + " Explode!");
         Collider[] InRangeObjects = Physics.OverlapSphere(transform.position, 50f);
-        Debug.Log(InRangeObjects.Length);
+        //Debug.Log(InRangeObjects.Length);
         for (int i = 0; i < InRangeObjects.Length; i++)
         {
             Rigidbody EffectRB = InRangeObjects[i].GetComponentInParent<Rigidbody>();
             if(EffectRB != null)
             {
-                Debug.Log(EffectRB.gameObject.name);
+                //Debug.Log(EffectRB.gameObject.name);
                 EffectRB.AddExplosionForce(ExplosionForce, transform.position, 50);
             }
         }
@@ -191,5 +192,6 @@ public class Torpedo_Movement : MonoBehaviour {
         }
         //WaterTrail.emission.rateOverTime = 0;
         Destroy(transform.gameObject);
+       
     }
 }

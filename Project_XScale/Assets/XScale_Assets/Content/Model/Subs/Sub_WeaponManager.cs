@@ -7,6 +7,8 @@ public class Sub_WeaponManager : MonoBehaviour {
     List<Transform> VLS_LPs = new List<Transform>();
     List<Transform> Torp_LPs = new List<Transform>();
 
+    public GameObject[] AvailableTorpedos;
+
     // Use this for initialization
     void Start ()
     {
@@ -18,6 +20,8 @@ public class Sub_WeaponManager : MonoBehaviour {
             if (Children[i].name.Contains("Torpedo_LP"))
                 Torp_LPs.Add(Children[i]);
         }
+
+        Load_TorpLP(Torp_LPs[0], AvailableTorpedos[0]);
     }
 	
 	// Update is called once per frame
@@ -25,4 +29,13 @@ public class Sub_WeaponManager : MonoBehaviour {
     {
 		
 	}
+
+    private void Load_TorpLP(Transform LP, GameObject Weapon)
+    {
+        GameObject WP = Instantiate(Weapon, LP.position, LP.rotation, LP);
+        WP.active = false;
+        Torpedo_Movement TorpM = WP.GetComponent<Torpedo_Movement>();
+        TorpM.enabled = false;
+        Debug.Log("Weapon: " + Weapon.name + "Loaded in " + LP.name);
+    }
 }
