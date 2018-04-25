@@ -1,4 +1,4 @@
-﻿Shader "Unlit/Add_PreRender"
+﻿Shader "Unlit/Blend_PostRender"
 {
 	Properties
 	{
@@ -6,7 +6,7 @@
 	}
 	SubShader
 	{
-		Tags{ "Queue" = "Transparent-1" "IgnoreProjector" = "True" "RenderType" = "transparent" }
+		Tags{ "Queue" = "Transparent+1" "IgnoreProjector" = "True" "RenderType" = "transparent" }
 		LOD 100
 		Blend SrcAlpha One
 

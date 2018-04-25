@@ -175,12 +175,15 @@ public class Torpedo_Movement : MonoBehaviour {
                 EffectRB.AddExplosionForce(ExplosionForce, transform.position, 50);
             }
         }
-        ParticleSystem WaterTrail = GetComponentInChildren<ParticleSystem>();
-        ParticleSystem.EmissionModule EM =  WaterTrail.emission;
-        EM.rateOverTime = 0;
-        Destroy(WaterTrail.gameObject, 3f);
-        WaterTrail.transform.parent = null;
-
+        ParticleSystem[] WaterTrail = GetComponentsInChildren<ParticleSystem>();
+        foreach(var PS in WaterTrail)
+        {
+            ParticleSystem.EmissionModule EM = PS.emission;
+            EM.rateOverTime = 0;
+            Destroy(PS.gameObject, 3f);
+            PS.transform.parent = null;
+        }
+        
         if (ExplosionParticle != null)
         { 
             GameObject ExplosionP =  Instantiate(ExplosionParticle, transform.position , transform.rotation);

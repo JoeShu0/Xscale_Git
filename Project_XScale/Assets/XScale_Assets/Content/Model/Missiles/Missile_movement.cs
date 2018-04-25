@@ -131,11 +131,14 @@ public class Missile_movement : MonoBehaviour {
                 EffectRB.AddExplosionForce(ExplosionForce, transform.position, 50);
             }
         }
-        ParticleSystem Trail = GetComponentInChildren<ParticleSystem>();
-        ParticleSystem.EmissionModule EM = Trail.emission;
-        EM.rateOverTime = 0;
-        Destroy(Trail.gameObject, 3f);
-        Trail.transform.parent = null;
+        ParticleSystem[] WaterTrail = GetComponentsInChildren<ParticleSystem>();
+        foreach (var PS in WaterTrail)
+        {
+            ParticleSystem.EmissionModule EM = PS.emission;
+            EM.rateOverTime = 0;
+            Destroy(PS.gameObject, 3f);
+            PS.transform.parent = null;
+        }
 
         if (ExplosionParticle != null)
         {
