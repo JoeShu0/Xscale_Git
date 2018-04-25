@@ -1,0 +1,222 @@
+fileFormatVersion: 2
+guid: d0113fdb55b1d064ab285a832d120e23
+timeCreated: 1524289227
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: B_Group
+    100002: B_point_001
+    100004: B_point_002
+    100006: B_point_003
+    100008: B_point_023
+    100010: B_point_024
+    100012: B_point_025
+    100014: B_point_026
+    100016: B_point_027
+    100018: B_point_028
+    100020: B_point_029
+    100022: B_point_030
+    100024: B_point_031
+    100026: B_point_032
+    100028: B_point_033
+    100030: MESH_Xeawolf
+    100032: //RootNode
+    100034: Elevator_point_001
+    100036: Elevator_point_002
+    100038: Rudder_point_001
+    100040: S_point_001
+    100042: Ship_Front_Point
+    100044: Surface_point
+    100046: Torpedo_Hatch001
+    100048: Torpedo_Hatch002
+    100050: Torpedo_Hatch003
+    100052: Torpedo_Hatch004
+    100054: Torpedo_HatchGroup
+    100056: VLS_Hatch001
+    100058: VLS_Hatch002
+    100060: VLS_Hatch003
+    100062: VLS_Hatch004
+    100064: VLS_Hatch005
+    100066: VLS_Hatch006
+    100068: VLS_Hatch007
+    100070: VLS_Hatch008
+    100072: VLS_Hatch009
+    100074: VLS_Hatch010
+    100076: VLS_Hatch011
+    100078: VLS_Hatch012
+    100080: VLS_HatchGroup
+    100082: MastGroup
+    100084: MastOptical01
+    100086: MastOptical02
+    100088: MastRadar01
+    100090: MastRadar02
+    100092: Torpedo_Group
+    100094: Torpedo_LP001
+    100096: Torpedo_LP002
+    100098: Torpedo_LP003
+    100100: Torpedo_LP004
+    100102: VLS_Group
+    100104: VLS_LP001
+    100106: VLS_LP002
+    100108: VLS_LP003
+    100110: VLS_LP004
+    100112: VLS_LP005
+    100114: VLS_LP006
+    100116: VLS_LP007
+    100118: VLS_LP008
+    100120: VLS_LP009
+    100122: VLS_LP010
+    100124: VLS_LP011
+    100126: VLS_LP012
+    400000: B_Group
+    400002: B_point_001
+    400004: B_point_002
+    400006: B_point_003
+    400008: B_point_023
+    400010: B_point_024
+    400012: B_point_025
+    400014: B_point_026
+    400016: B_point_027
+    400018: B_point_028
+    400020: B_point_029
+    400022: B_point_030
+    400024: B_point_031
+    400026: B_point_032
+    400028: B_point_033
+    400030: MESH_Xeawolf
+    400032: //RootNode
+    400034: Elevator_point_001
+    400036: Elevator_point_002
+    400038: Rudder_point_001
+    400040: S_point_001
+    400042: Ship_Front_Point
+    400044: Surface_point
+    400046: Torpedo_Hatch001
+    400048: Torpedo_Hatch002
+    400050: Torpedo_Hatch003
+    400052: Torpedo_Hatch004
+    400054: Torpedo_HatchGroup
+    400056: VLS_Hatch001
+    400058: VLS_Hatch002
+    400060: VLS_Hatch003
+    400062: VLS_Hatch004
+    400064: VLS_Hatch005
+    400066: VLS_Hatch006
+    400068: VLS_Hatch007
+    400070: VLS_Hatch008
+    400072: VLS_Hatch009
+    400074: VLS_Hatch010
+    400076: VLS_Hatch011
+    400078: VLS_Hatch012
+    400080: VLS_HatchGroup
+    400082: MastGroup
+    400084: MastOptical01
+    400086: MastOptical02
+    400088: MastRadar01
+    400090: MastRadar02
+    400092: Torpedo_Group
+    400094: Torpedo_LP001
+    400096: Torpedo_LP002
+    400098: Torpedo_LP003
+    400100: Torpedo_LP004
+    400102: VLS_Group
+    400104: VLS_LP001
+    400106: VLS_LP002
+    400108: VLS_LP003
+    400110: VLS_LP004
+    400112: VLS_LP005
+    400114: VLS_LP006
+    400116: VLS_LP007
+    400118: VLS_LP008
+    400120: VLS_LP009
+    400122: VLS_LP010
+    400124: VLS_LP011
+    400126: VLS_LP012
+    2100000: No Name
+    2300000: MESH_Xeawolf
+    3300000: MESH_Xeawolf
+    4300000: MESH_Xeawolf
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: MESH_Xeawolf
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

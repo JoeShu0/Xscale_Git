@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Custom_WaterShader_Test04
+  m_Shader: {fileID: 4800000, guid: c9c5e7898f4eb2847ab42781d5127dde, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DispTex:
+        m_Texture: {fileID: 2800000, guid: 256c1828b038f454db3d960d81713f87, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DispTex01:
+        m_Texture: {fileID: 2800000, guid: 256c1828b038f454db3d960d81713f87, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DispTex02:
+        m_Texture: {fileID: 2800000, guid: aa844d5fcf1c01942adc73d506e2775d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 20, y: 20}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflecTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _CameraDepth: 0
+    - _CriticalAngle: 0.5
+    - _Displacement: 0.01
+    - _FogDensity: 0.027999999
+    - _FogEnd: 1
+    - _FogStart: 0
+    - _FresnelScale: 0.069
+    - _Gloss: 0.589
+    - _IsBackFace: 0
+    - _MainTile01: 32.4
+    - _MaxDist: 100
+    - _MinDist: 50
+    - _MovingDirection: 0
+    - _MovingSpeed: 100
+    - _NormalAddFactor: 0.001
+    - _PlaneSize: 10
+    - _ReflecDistortion: 200
+    - _RefrMaxDistance: 286
+    - _RefracDistortion: 200
+    - _RefractionAmount: 0.802
+    - _Smooth: 0.1
+    - _Specular: 137
+    - _SubMD01: 0
+    - _SubMD02: 0
+    - _SubMS01: 100
+    - _SubMS02: 100
+    - _SubSt01: 0.377
+    - _SubSt02: 0.005
+    - _SubTile01: 100
+    - _SubTile02: 1
+    - _Tessellation: 256
+    - _TransParent: 1
+    m_Colors:
+    - _Color: {r: 0.5788819, g: 0.5892459, b: 0.6102941, a: 1}
+    - _FogColor: {r: 0.048442908, g: 0.14073502, b: 0.20588237, a: 1}
+    - _ReflColor: {r: 1, g: 1, b: 1, a: 1}
+    - _WaterFogColor: {r: 1, g: 1, b: 1, a: 1}

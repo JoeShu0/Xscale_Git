@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Custom_WaterShader_Test05
+  m_Shader: {fileID: 4800000, guid: 5393c8ec4938ddd4bb6058e5f7cf6b9f, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DispTex:
+        m_Texture: {fileID: 2800000, guid: 256c1828b038f454db3d960d81713f87, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DispTex01:
+        m_Texture: {fileID: 2800000, guid: 00254d98bd7f57b4a82a9638eda750c3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DispTex02:
+        m_Texture: {fileID: 2800000, guid: 00254d98bd7f57b4a82a9638eda750c3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: f245b1a707b7761479e644608f969103, type: 3}
+        m_Scale: {x: 40, y: 40}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflecDepthTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflecTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ShipWave:
+        m_Texture: {fileID: 2800000, guid: f9cfcbb4d22ceae4f8b948eefef562ba, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SubWave:
+        m_Texture: {fileID: 2800000, guid: 97e389c5d45ace94483409539954e832, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _CameraDepth: 0
+    - _CriticalAngle: 0.7
+    - _Displacement: 0.75
+    - _FogDensity: 0.008
+    - _Gloss: 1
+    - _MainTile01: 7.5
+    - _MaxDist: 1000
+    - _MinDist: 50
+    - _MovingDirection: 0
+    - _MovingSpeed: 100
+    - _NormalAddFactor: 0.1
+    - _PlaneSize: 500
+    - _ReflecDistortion: 800
+    - _RefracDistortion: 800
+    - _RefractionAmount: 0.5
+    - _Smooth: 1
+    - _Specular: 68
+    - _SubMD01: 77
+    - _SubMD02: 229
+    - _SubMS01: 20
+    - _SubMS02: 10
+    - _SubSt01: 0.75
+    - _SubSt02: 0.5
+    - _SubTile01: 2.5
+    - _SubTile02: 7.5
+    - _Tessellation: 25
+    - _TransParent: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _FogColor: {r: 0.09926471, g: 0.18762678, b: 0.25, a: 1}
+    - _ReflColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TestPositionInput: {r: 0, g: 0, b: 0, a: 0}

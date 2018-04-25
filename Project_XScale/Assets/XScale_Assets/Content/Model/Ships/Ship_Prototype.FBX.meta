@@ -1,0 +1,144 @@
+fileFormatVersion: 2
+guid: 6c9820864fe58da43aa876bd1b5f5ddf
+timeCreated: 1520002406
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: B_point_002
+    100002: B_point_003
+    100004: B_point_004
+    100006: B_point_005
+    100008: B_point_006
+    100010: B_point_007
+    100012: B_point_008
+    100014: B_point_009
+    100016: B_point_010
+    100018: B_point_011
+    100020: B_point_012
+    100022: B_point_013
+    100024: B_point_014
+    100026: B_point_015
+    100028: B_point_016
+    100030: B_point_017
+    100032: B_point_018
+    100034: B_point_019
+    100036: B_point_020
+    100038: Hull_shell
+    100040: Rudder_point_001
+    100042: S_point_001
+    100044: S_point_002
+    100046: S_point_003
+    100048: Ship_Front_Point
+    100050: //RootNode
+    400000: B_point_002
+    400002: B_point_003
+    400004: B_point_004
+    400006: B_point_005
+    400008: B_point_006
+    400010: B_point_007
+    400012: B_point_008
+    400014: B_point_009
+    400016: B_point_010
+    400018: B_point_011
+    400020: B_point_012
+    400022: B_point_013
+    400024: B_point_014
+    400026: B_point_015
+    400028: B_point_016
+    400030: B_point_017
+    400032: B_point_018
+    400034: B_point_019
+    400036: B_point_020
+    400038: Hull_shell
+    400040: Rudder_point_001
+    400042: S_point_001
+    400044: S_point_002
+    400046: S_point_003
+    400048: Ship_Front_Point
+    400050: //RootNode
+    2100000: 'Material #14'
+    2100002: 'Material #13'
+    2300000: Hull_shell
+    3300000: Hull_shell
+    4300000: Hull_shell
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

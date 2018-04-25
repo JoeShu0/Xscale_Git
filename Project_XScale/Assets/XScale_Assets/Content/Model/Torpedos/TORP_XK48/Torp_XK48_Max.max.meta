@@ -1,0 +1,394 @@
+fileFormatVersion: 2
+guid: 490878ec4d45f4f438a4aef21de5a54e
+timeCreated: 1524494076
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Arm_point
+    100002: B_Group
+    100004: B_point_001
+    100006: B_point_001 1
+    100008: B_point_001 2
+    100010: B_point_001 3
+    100012: B_point_002
+    100014: B_point_002 1
+    100016: B_point_002 2
+    100018: B_point_002 3
+    100020: B_point_003
+    100022: B_point_003 1
+    100024: B_point_004
+    100026: B_point_005
+    100028: B_point_006
+    100030: B_point_007
+    100032: B_point_008
+    100034: B_point_009
+    100036: B_point_010
+    100038: B_point_011
+    100040: B_point_012
+    100042: B_point_013
+    100044: B_point_014
+    100046: B_point_015
+    100048: B_point_016
+    100050: B_point_017
+    100052: B_point_018
+    100054: B_point_019
+    100056: B_point_020
+    100058: B_point_021
+    100060: B_point_023
+    100062: B_point_024
+    100064: B_point_025
+    100066: B_point_026
+    100068: B_point_027
+    100070: B_point_028
+    100072: B_point_029
+    100074: B_point_030
+    100076: B_point_031
+    100078: B_point_032
+    100080: B_point_033
+    100082: Box001
+    100084: Box002
+    100086: CruiseMissile_Hull
+    100088: CruiseMissile_Prototype01
+    100090: Cylinder001
+    100092: Elevator
+    100094: Elevator_point_001
+    100096: Elevator_point_002
+    100098: Hull_shell
+    100100: MainNozzle
+    100102: MainWing
+    100104: MastGroup
+    100106: MastOptical01
+    100108: MastOptical02
+    100110: MastRadar01
+    100112: MastRadar02
+    100114: Mesh
+    100116: MESH_Xeawolf
+    100118: MESH_XK48
+    100120: Missile_Hull
+    100122: Missile_Prototype
+    100124: Object015
+    100126: Object018
+    100128: Plane001
+    100130: Plane002
+    100132: Plane004
+    100134: Propeller01
+    100136: Propeller02
+    100138: Rudder
+    100140: Rudder_point_001
+    100142: Rudder_point_001 1
+    100144: Rudder_point_001 2
+    100146: Rudder_point_002
+    100148: S_point_001
+    100150: S_point_001 1
+    100152: S_point_001 2
+    100154: Ship_Front_Point
+    100156: Ship_Front_Point 1
+    100158: SUB_Xeawolf
+    100160: Submarine
+    100162: Submarine_Hull
+    100164: Submarine_Prop
+    100166: Surface_point
+    100168: Surface_point 1
+    100170: TailWing01
+    100172: TailWing02
+    100174: TORP_XK48
+    100176: //RootNode
+    100178: Torpedo_Group
+    100180: Torpedo_Hatch001
+    100182: Torpedo_Hatch002
+    100184: Torpedo_Hatch003
+    100186: Torpedo_Hatch004
+    100188: Torpedo_HatchGroup
+    100190: Torpedo_LP001
+    100192: Torpedo_LP002
+    100194: Torpedo_LP003
+    100196: Torpedo_LP004
+    100198: Torpedo_Prototype
+    100200: TorpedoSize_12x251
+    100202: VLS_Group
+    100204: VLS_Hatch001
+    100206: VLS_Hatch002
+    100208: VLS_Hatch003
+    100210: VLS_Hatch004
+    100212: VLS_Hatch005
+    100214: VLS_Hatch006
+    100216: VLS_Hatch007
+    100218: VLS_Hatch008
+    100220: VLS_Hatch009
+    100222: VLS_Hatch010
+    100224: VLS_Hatch011
+    100226: VLS_Hatch012
+    100228: VLS_HatchGroup
+    100230: VLS_LP001
+    100232: VLS_LP002
+    100234: VLS_LP003
+    100236: VLS_LP004
+    100238: VLS_LP005
+    100240: VLS_LP006
+    100242: VLS_LP007
+    100244: VLS_LP008
+    100246: VLS_LP009
+    100248: VLS_LP010
+    100250: VLS_LP011
+    100252: VLS_LP012
+    400000: Arm_point
+    400002: B_Group
+    400004: B_point_001
+    400006: B_point_001 1
+    400008: B_point_001 2
+    400010: B_point_001 3
+    400012: B_point_002
+    400014: B_point_002 1
+    400016: B_point_002 2
+    400018: B_point_002 3
+    400020: B_point_003
+    400022: B_point_003 1
+    400024: B_point_004
+    400026: B_point_005
+    400028: B_point_006
+    400030: B_point_007
+    400032: B_point_008
+    400034: B_point_009
+    400036: B_point_010
+    400038: B_point_011
+    400040: B_point_012
+    400042: B_point_013
+    400044: B_point_014
+    400046: B_point_015
+    400048: B_point_016
+    400050: B_point_017
+    400052: B_point_018
+    400054: B_point_019
+    400056: B_point_020
+    400058: B_point_021
+    400060: B_point_023
+    400062: B_point_024
+    400064: B_point_025
+    400066: B_point_026
+    400068: B_point_027
+    400070: B_point_028
+    400072: B_point_029
+    400074: B_point_030
+    400076: B_point_031
+    400078: B_point_032
+    400080: B_point_033
+    400082: Box001
+    400084: Box002
+    400086: CruiseMissile_Hull
+    400088: CruiseMissile_Prototype01
+    400090: Cylinder001
+    400092: Elevator
+    400094: Elevator_point_001
+    400096: Elevator_point_002
+    400098: Hull_shell
+    400100: MainNozzle
+    400102: MainWing
+    400104: MastGroup
+    400106: MastOptical01
+    400108: MastOptical02
+    400110: MastRadar01
+    400112: MastRadar02
+    400114: Mesh
+    400116: MESH_Xeawolf
+    400118: MESH_XK48
+    400120: Missile_Hull
+    400122: Missile_Prototype
+    400124: Object015
+    400126: Object018
+    400128: Plane001
+    400130: Plane002
+    400132: Plane004
+    400134: Propeller01
+    400136: Propeller02
+    400138: Rudder
+    400140: Rudder_point_001
+    400142: Rudder_point_001 1
+    400144: Rudder_point_001 2
+    400146: Rudder_point_002
+    400148: S_point_001
+    400150: S_point_001 1
+    400152: S_point_001 2
+    400154: Ship_Front_Point
+    400156: Ship_Front_Point 1
+    400158: SUB_Xeawolf
+    400160: Submarine
+    400162: Submarine_Hull
+    400164: Submarine_Prop
+    400166: Surface_point
+    400168: Surface_point 1
+    400170: TailWing01
+    400172: TailWing02
+    400174: TORP_XK48
+    400176: //RootNode
+    400178: Torpedo_Group
+    400180: Torpedo_Hatch001
+    400182: Torpedo_Hatch002
+    400184: Torpedo_Hatch003
+    400186: Torpedo_Hatch004
+    400188: Torpedo_HatchGroup
+    400190: Torpedo_LP001
+    400192: Torpedo_LP002
+    400194: Torpedo_LP003
+    400196: Torpedo_LP004
+    400198: Torpedo_Prototype
+    400200: TorpedoSize_12x251
+    400202: VLS_Group
+    400204: VLS_Hatch001
+    400206: VLS_Hatch002
+    400208: VLS_Hatch003
+    400210: VLS_Hatch004
+    400212: VLS_Hatch005
+    400214: VLS_Hatch006
+    400216: VLS_Hatch007
+    400218: VLS_Hatch008
+    400220: VLS_Hatch009
+    400222: VLS_Hatch010
+    400224: VLS_Hatch011
+    400226: VLS_Hatch012
+    400228: VLS_HatchGroup
+    400230: VLS_LP001
+    400232: VLS_LP002
+    400234: VLS_LP003
+    400236: VLS_LP004
+    400238: VLS_LP005
+    400240: VLS_LP006
+    400242: VLS_LP007
+    400244: VLS_LP008
+    400246: VLS_LP009
+    400248: VLS_LP010
+    400250: VLS_LP011
+    400252: VLS_LP012
+    2100000: 'Material #13'
+    2100002: 'Material #14'
+    2100004: No Name
+    2100006: 'Material #15'
+    2300000: Box001
+    2300002: Box002
+    2300004: Cylinder001
+    2300006: Hull_shell
+    2300008: Missile_Hull
+    2300010: Object015
+    2300012: Object018
+    2300014: Plane001
+    2300016: Plane002
+    2300018: Plane004
+    2300020: Submarine_Hull
+    2300022: Submarine_Prop
+    2300024: TorpedoSize_12x251
+    3300000: Box001
+    3300002: Box002
+    3300004: Cylinder001
+    3300006: Hull_shell
+    3300008: Missile_Hull
+    3300010: Object015
+    3300012: Object018
+    3300014: Plane001
+    3300016: Plane002
+    3300018: Plane004
+    3300020: Submarine_Hull
+    3300022: Submarine_Prop
+    3300024: TorpedoSize_12x251
+    4300000: Submarine_Hull
+    4300002: Submarine_Prop
+    4300004: Hull_shell
+    4300006: Plane001
+    4300008: Plane002
+    4300010: Mesh
+    4300012: Missile_Hull
+    4300014: CruiseMissile_Hull
+    4300016: Plane004
+    4300018: TorpedoSize_12x251
+    4300020: Object015
+    4300022: Object018
+    4300024: MESH_Xeawolf
+    4300026: Box001
+    4300028: Box002
+    4300030: Cylinder001
+    4300032: MESH_XK48
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: CruiseMissile_Hull
+    13700002: Mesh
+    13700004: MESH_Xeawolf
+    13700006: MESH_XK48
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

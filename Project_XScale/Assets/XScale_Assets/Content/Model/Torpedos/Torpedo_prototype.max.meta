@@ -1,0 +1,204 @@
+fileFormatVersion: 2
+guid: 88564a2dc4d7de84a8ac547392038c59
+timeCreated: 1521257214
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Arm_point
+    100002: B_point_001
+    100004: B_point_001 1
+    100006: B_point_002
+    100008: B_point_002 1
+    100010: B_point_003
+    100012: B_point_004
+    100014: B_point_005
+    100016: B_point_006
+    100018: B_point_007
+    100020: B_point_008
+    100022: B_point_009
+    100024: B_point_010
+    100026: B_point_011
+    100028: B_point_012
+    100030: B_point_013
+    100032: B_point_014
+    100034: B_point_015
+    100036: B_point_016
+    100038: B_point_017
+    100040: B_point_018
+    100042: B_point_019
+    100044: B_point_020
+    100046: B_point_021
+    100048: Elevator
+    100050: Hull_shell
+    100052: Mesh
+    100054: Plane001
+    100056: Plane002
+    100058: Propeller01
+    100060: Propeller02
+    100062: Rudder
+    100064: Rudder_point_001
+    100066: Rudder_point_002
+    100068: S_point_001
+    100070: Ship_Front_Point
+    100072: Submarine
+    100074: Submarine_Hull
+    100076: Submarine_Prop
+    100078: Surface_point
+    100080: Torpedo_Prototype
+    100082: //RootNode
+    100084: TorpedoSize_12x250
+    100086: Missile_Prototype
+    100088: TorpedoSize_12x251
+    400000: Arm_point
+    400002: B_point_001
+    400004: B_point_001 1
+    400006: B_point_002
+    400008: B_point_002 1
+    400010: B_point_003
+    400012: B_point_004
+    400014: B_point_005
+    400016: B_point_006
+    400018: B_point_007
+    400020: B_point_008
+    400022: B_point_009
+    400024: B_point_010
+    400026: B_point_011
+    400028: B_point_012
+    400030: B_point_013
+    400032: B_point_014
+    400034: B_point_015
+    400036: B_point_016
+    400038: B_point_017
+    400040: B_point_018
+    400042: B_point_019
+    400044: B_point_020
+    400046: B_point_021
+    400048: Elevator
+    400050: Hull_shell
+    400052: Mesh
+    400054: Plane001
+    400056: Plane002
+    400058: Propeller01
+    400060: Propeller02
+    400062: Rudder
+    400064: Rudder_point_001
+    400066: Rudder_point_002
+    400068: S_point_001
+    400070: Ship_Front_Point
+    400072: Submarine
+    400074: Submarine_Hull
+    400076: Submarine_Prop
+    400078: Surface_point
+    400080: Torpedo_Prototype
+    400082: //RootNode
+    400084: TorpedoSize_12x250
+    400086: Missile_Prototype
+    400088: TorpedoSize_12x251
+    2100000: 'Material #13'
+    2100002: 'Material #14'
+    2100004: No Name
+    2300000: Hull_shell
+    2300002: Plane001
+    2300004: Plane002
+    2300006: Submarine_Hull
+    2300008: Submarine_Prop
+    2300010: TorpedoSize_12x250
+    2300012: TorpedoSize_12x251
+    3300000: Hull_shell
+    3300002: Plane001
+    3300004: Plane002
+    3300006: Submarine_Hull
+    3300008: Submarine_Prop
+    3300010: TorpedoSize_12x250
+    3300012: TorpedoSize_12x251
+    4300000: Submarine_Hull
+    4300002: Submarine_Prop
+    4300004: Hull_shell
+    4300006: Plane001
+    4300008: Plane002
+    4300010: TorpedoSize_12x250
+    4300012: Mesh
+    4300014: TorpedoSize_12x251
+    9500000: //RootNode
+    13700000: Mesh
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
