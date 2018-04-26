@@ -297,7 +297,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 32ace9653ce71554f99248cfa94c5eb9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 32ace9653ce71554f99248cfa94c5eb9, type: 3}
       propertyPath: m_Layer
@@ -4854,7 +4854,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 960232626}
-  m_LocalRotation: {x: 0.6430342, y: 0.29412088, z: 0.29412094, w: 0.64303416}
+  m_LocalRotation: {x: 0.64303416, y: 0.29412085, z: 0.2941209, w: 0.6430341}
   m_LocalPosition: {x: 0, y: 17.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -4988,6 +4988,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 199876627604084758, guid: 15fbb40b0a5cbda49938dee20ec5bb5e,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 719d4b7f434817242b66fb267087c2ce, type: 2}
     - target: {fileID: 114363022555986056, guid: 15fbb40b0a5cbda49938dee20ec5bb5e,
         type: 2}
       propertyPath: TargetTransform
@@ -4998,14 +5003,9 @@ Prefab:
       propertyPath: ExplosionParticle
       value: 
       objectReference: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
-    - target: {fileID: 199876627604084758, guid: 15fbb40b0a5cbda49938dee20ec5bb5e,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 719d4b7f434817242b66fb267087c2ce, type: 2}
-    - target: {fileID: 1022842251734534, guid: 15fbb40b0a5cbda49938dee20ec5bb5e, type: 2}
+    - target: {fileID: 1827096092458920, guid: 15fbb40b0a5cbda49938dee20ec5bb5e, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15fbb40b0a5cbda49938dee20ec5bb5e, type: 2}

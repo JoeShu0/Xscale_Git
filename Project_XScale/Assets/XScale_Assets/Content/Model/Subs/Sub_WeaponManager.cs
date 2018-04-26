@@ -27,15 +27,24 @@ public class Sub_WeaponManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		
-	}
+        if (Input.GetKey("f"))
+            Fire_TorpLP(Torp_LPs[0]);
+    }
 
     private void Load_TorpLP(Transform LP, GameObject Weapon)
     {
         GameObject WP = Instantiate(Weapon, LP.position, LP.rotation, LP);
-        WP.active = false;
-        Torpedo_Movement TorpM = WP.GetComponent<Torpedo_Movement>();
-        TorpM.enabled = false;
+        Torpedo_Movement TM = WP.GetComponent<Torpedo_Movement>();
+        TM.DeactiveWeapon();
         Debug.Log("Weapon: " + Weapon.name + "Loaded in " + LP.name);
+    }
+
+    private void Fire_TorpLP(Transform LP)
+    {
+        GameObject WP = LP.GetChild(0).gameObject;
+        Torpedo_Movement TM = WP.GetComponent<Torpedo_Movement>();
+        TM.ActiveWeapon();
+        WP.transform.position = LP.position;
+        WP.transform.rotation = LP.rotation;
     }
 }

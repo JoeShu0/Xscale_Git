@@ -230,7 +230,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1827096092458920}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58c4f91a2115e2d4598fae5a477838df, type: 3}
   m_Name: 
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PropellerSpeed: 1000
-  Thrust: 25
+  Thrust: 100
   SteerForce: 0.1
   ExplosionForce: 10000
   RB: {fileID: 0}
@@ -264,6 +264,9 @@ MonoBehaviour:
   MAXBuoyancyDepth: 0.1
   TargetTransform: {fileID: 0}
   ExplosionParticle: {fileID: 0}
+  VFX_Setup: {fileID: 0}
+  ISActive: 1
+  ISArmed: 0
 --- !u!136 &136074056307090896
 CapsuleCollider:
   m_ObjectHideFlags: 1

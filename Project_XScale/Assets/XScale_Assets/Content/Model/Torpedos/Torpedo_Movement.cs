@@ -38,15 +38,24 @@ public class Torpedo_Movement : MonoBehaviour {
     //Quaternion CurrentRotation;
 
     public GameObject ExplosionParticle;
+    public VFX_RefleSetup VFX_Setup;
+
+    [HideInInspector] public bool ISActive = true;
+    [HideInInspector] public bool ISArmed = false;
 
 
 
     // Use this for initialization
-    void Start()
+    private void Awake()
     {
+        RB = GetComponent<Rigidbody>();
+
         SurfacePointCal = transform.gameObject.AddComponent<CalculateSurfacePoint>() as CalculateSurfacePoint;
         RB = GetComponent<Rigidbody>();
         SurfacePointCal = GetComponent<CalculateSurfacePoint>();
+
+        VFX_Setup = GetComponent<VFX_RefleSetup>();
+
         //遍历所有子对象并分类识别
         Transform[] Children = transform.GetComponentsInChildren<Transform>();
         for (int i = 0; i < Children.Length; i++)
@@ -56,21 +65,20 @@ public class Torpedo_Movement : MonoBehaviour {
             if (Children[i].name.Contains("S_point"))
                 S_point.Add(Children[i]);
             //if (Children[i].name.Contains("Rudder"))
-                //RudderMesh = Children[i];
+            //RudderMesh = Children[i];
             //if (Children[i].name.Contains("Elevator"))
-                //ElevatorMesh = Children[i];
+            //ElevatorMesh = Children[i];
             //if (Children[i].name.Contains("Arm_point"))
-                //Arm_point = Children[i];
+            //Arm_point = Children[i];
         }
         RB.centerOfMass = COMoffset;
         //Debug.Log("Get "+B_Points.Count);
         MAXBuoyancyPerPoint = RB.mass * BuoyancyFactor / B_Points.Count;
+    }
 
-        //IsSetupComplete = true;
+    void Start()
+    {
 
-        //EnablePropeller = true;
-
-        //CurrentRotation = transform.rotation;
     }
 
     // Update is called once per frame
@@ -84,24 +92,52 @@ public class Torpedo_Movement : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        if (SurfacePointCal.IsSetupComplete == false)
+        if (ISActive == true)
         {
-            Debug.Log("Setting Up SurfacePointCalculator for " + transform.gameObject.name);
-            return;
+            if (SurfacePointCal.IsSetupComplete == false)
+            {
+                Debug.Log("Setting Up SurfacePointCalculator for " + transform.gameObject.name);
+                return;
+            }
+
+            if (TargetTransform == null)
+                TargetPos = new Vector3(transform.forward.x, 0, transform.forward.z) * 10 + transform.position;
+            else
+                TargetPos = TargetTransform.position;
+            Debug.DrawLine(transform.position, TargetPos, Color.cyan);
+
+            ActiveThrust = Thrust;
+            if (SurfacePointCal.CalculateWaterPosition(S_point[0].position) < S_point[0].position.y)
+                ActiveThrust = 0;
+
+            AddForces();
         }
-
-        if (TargetTransform == null)
-            TargetPos = new Vector3(transform.forward.x, 0, transform.forward.z) * 10 + transform.position;
-        else
-            TargetPos = TargetTransform.position;
-        Debug.DrawLine(transform.position, TargetPos, Color.cyan);
-
-        ActiveThrust = Thrust;
-        if (SurfacePointCal.CalculateWaterPosition(S_point[0].position) < S_point[0].position.y)
-            ActiveThrust = 0;
-        AddForces();
+            
 
         //CurrentRotation = transform.rotation;
+    }
+
+    public void ActiveWeapon()
+    {
+        S_point[0].gameObject.active = true;
+        VFX_Setup.enabled = true;
+        RB.isKinematic = false;
+        ISActive = true;
+        StartCoroutine(ArmCountDown());
+    }
+
+    public void DeactiveWeapon()
+    {
+        ISActive = false;
+        RB.isKinematic = true;
+        S_point[0].gameObject.active = false;
+        VFX_Setup.enabled = false;
+    }
+
+    IEnumerator ArmCountDown()
+    {
+        yield return new WaitForSeconds(5f);
+        ISArmed = true;
     }
 
     void AddForces()
@@ -158,8 +194,12 @@ public class Torpedo_Movement : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name);
-        Explode();
+        if (ISArmed == true)
+        {
+            Debug.Log(other.gameObject.name);
+            Explode();
+        }
+        
     }
 
     public void Explode()
