@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PropellerSpeed: 1000
-  Thrust: 100
+  Thrust: 50
   SteerForce: 0.1
   ExplosionForce: 10000
   RB: {fileID: 0}

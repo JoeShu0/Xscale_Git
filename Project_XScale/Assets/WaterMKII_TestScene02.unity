@@ -712,7 +712,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4254849179098402, guid: 990d92f1e2455e24a9e691e81c38227d, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 119.8
       objectReference: {fileID: 0}
     - target: {fileID: 4254849179098402, guid: 990d92f1e2455e24a9e691e81c38227d, type: 2}
       propertyPath: m_LocalRotation.x
@@ -5571,6 +5571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78028e0b22e995b4a886e8a4f6b04aae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Target: {fileID: 655668218}
   AvailableTorpedos:
   - {fileID: 1827096092458920, guid: 15fbb40b0a5cbda49938dee20ec5bb5e, type: 2}
 --- !u!1 &1642508143
@@ -5725,7 +5726,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1802009535}
   m_LocalRotation: {x: 0.22706874, y: 0.21970703, z: -0.66965646, w: 0.6721078}
-  m_LocalPosition: {x: -77, y: 0, z: 33.8}
+  m_LocalPosition: {x: -104.3, y: 0, z: 33.8}
   m_LocalScale: {x: 2016.4712, y: 104.66574, z: 3.4204519}
   m_Children: []
   m_Father: {fileID: 1293087632}

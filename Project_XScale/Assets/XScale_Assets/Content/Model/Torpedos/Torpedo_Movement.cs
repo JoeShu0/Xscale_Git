@@ -43,7 +43,11 @@ public class Torpedo_Movement : MonoBehaviour {
     [HideInInspector] public bool ISActive = true;
     [HideInInspector] public bool ISArmed = false;
 
+    private bool IsInBarrel;
+    private float BarrelLength = 5;
 
+    Vector3 InitialLocalPos;
+    Quaternion InitialLocalRot;
 
     // Use this for initialization
     private void Awake()
@@ -74,6 +78,9 @@ public class Torpedo_Movement : MonoBehaviour {
         RB.centerOfMass = COMoffset;
         //Debug.Log("Get "+B_Points.Count);
         MAXBuoyancyPerPoint = RB.mass * BuoyancyFactor / B_Points.Count;
+
+        InitialLocalPos = transform.localPosition;
+        InitialLocalRot = transform.localRotation;
     }
 
     void Start()
@@ -85,9 +92,12 @@ public class Torpedo_Movement : MonoBehaviour {
     void Update()
     {
 
+    }
 
-
-
+    private void LateUpdate()
+    {
+        //transform.localRotation = InitialLocalRot;
+        //transform.localPosition = new Vector3(InitialLocalPos.x, InitialLocalPos.y, transform.position.z);
     }
 
     private void FixedUpdate()
@@ -112,8 +122,9 @@ public class Torpedo_Movement : MonoBehaviour {
 
             AddForces();
         }
-            
 
+        //transform.localRotation = InitialLocalRot;
+        //transform.localPosition = new Vector3(InitialLocalPos.x, InitialLocalPos.y, transform.position.z);
         //CurrentRotation = transform.rotation;
     }
 
@@ -124,6 +135,7 @@ public class Torpedo_Movement : MonoBehaviour {
         RB.isKinematic = false;
         ISActive = true;
         StartCoroutine(ArmCountDown());
+        //transform.parent = null;
     }
 
     public void DeactiveWeapon()
@@ -136,8 +148,9 @@ public class Torpedo_Movement : MonoBehaviour {
 
     IEnumerator ArmCountDown()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         ISArmed = true;
+        transform.parent = null;
     }
 
     void AddForces()

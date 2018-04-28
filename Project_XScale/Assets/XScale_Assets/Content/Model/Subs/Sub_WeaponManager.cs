@@ -7,6 +7,8 @@ public class Sub_WeaponManager : MonoBehaviour {
     List<Transform> VLS_LPs = new List<Transform>();
     List<Transform> Torp_LPs = new List<Transform>();
 
+    public Transform Target;
+
     public GameObject[] AvailableTorpedos;
 
     // Use this for initialization
@@ -46,5 +48,6 @@ public class Sub_WeaponManager : MonoBehaviour {
         TM.ActiveWeapon();
         WP.transform.position = LP.position;
         WP.transform.rotation = LP.rotation;
+        TM.TargetTransform = Target;
     }
 }
