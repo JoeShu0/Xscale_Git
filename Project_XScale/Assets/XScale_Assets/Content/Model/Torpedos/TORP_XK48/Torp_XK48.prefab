@@ -265,8 +265,8 @@ MonoBehaviour:
   TargetTransform: {fileID: 0}
   ExplosionParticle: {fileID: 0}
   VFX_Setup: {fileID: 0}
-  ISActive: 1
-  ISArmed: 0
+  M_ISActive: 0
+  M_ISArmed: 0
 --- !u!136 &136074056307090896
 CapsuleCollider:
   m_ObjectHideFlags: 1

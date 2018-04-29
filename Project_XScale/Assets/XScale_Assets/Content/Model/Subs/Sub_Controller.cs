@@ -103,7 +103,7 @@ public class Sub_Controller : MonoBehaviour {
         //Elevator = Mathf.Lerp(-1, 1, (float)(ElevatorGear + 3) / 6);
         //Ballast = Mathf.Lerp(-1, 1, (float)(Ballastlevel + 3) / 6);
         //if (Ballastlevel > 3) Ballast = 2;
-        Debug.Log("Throttle: " + Throttle + " Rudder: " + Rudder + " Elevator: " + Elevator + " Ballast: " + Ballast);
+        //Debug.Log("Throttle: " + Throttle + " Rudder: " + Rudder + " Elevator: " + Elevator + " Ballast: " + Ballast);
         PastMoveStausToSubMovement(SubMovement, Throttle, Rudder, Elevator, Ballast);
     }
 

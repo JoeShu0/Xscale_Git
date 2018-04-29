@@ -40,14 +40,14 @@ public class Torpedo_Movement : MonoBehaviour {
     public GameObject ExplosionParticle;
     public VFX_RefleSetup VFX_Setup;
 
-    [HideInInspector] public bool ISActive = true;
-    [HideInInspector] public bool ISArmed = false;
+    [HideInInspector] public bool M_ISActive = false;//是否处于激活状态，激活后能够单独计算动力，阻力
+    [HideInInspector] public bool M_ISArmed = false;//是否会接触就爆炸
 
-    private bool IsInBarrel;
-    private float BarrelLength = 5;
+    private bool IsInBarrel;//是否还在发射管当中，在发射管中时，运动方向会受到限制
+    private float BarrelLength = 5;//发射管长度
 
     Vector3 InitialLocalPos;
-    Quaternion InitialLocalRot;
+    Quaternion InitialLocalRot;//记录初始的局部坐标
 
     // Use this for initialization
     private void Awake()
@@ -80,8 +80,11 @@ public class Torpedo_Movement : MonoBehaviour {
         MAXBuoyancyPerPoint = RB.mass * BuoyancyFactor / B_Points.Count;
 
         InitialLocalPos = transform.localPosition;
-        InitialLocalRot = transform.localRotation;
-    }
+        InitialLocalRot = transform.localRotation;//记录初始的局部坐标
+
+        M_ISActive = false;
+        M_ISArmed = false;
+}
 
     void Start()
     {
@@ -91,18 +94,18 @@ public class Torpedo_Movement : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
+        //Debug.Log("Pos: " + transform.localPosition + "  Rot: " + transform.localRotation);
     }
 
     private void LateUpdate()
     {
-        //transform.localRotation = InitialLocalRot;
-        //transform.localPosition = new Vector3(InitialLocalPos.x, InitialLocalPos.y, transform.position.z);
+        if (IsInBarrel)
+            BarrelRestrict();//发射管中时，运动方向会受到限制
     }
 
     private void FixedUpdate()
     {
-        if (ISActive == true)
+        if (M_ISActive == true)
         {
             if (SurfacePointCal.IsSetupComplete == false)
             {
@@ -130,27 +133,36 @@ public class Torpedo_Movement : MonoBehaviour {
 
     public void ActiveWeapon()
     {
-        S_point[0].gameObject.active = true;
+        S_point[0].gameObject.SetActive(true);
         VFX_Setup.enabled = true;
         RB.isKinematic = false;
-        ISActive = true;
-        StartCoroutine(ArmCountDown());
+        M_ISActive = true;
+        IsInBarrel = true;
+        //StartCoroutine(ArmCountDown());
         //transform.parent = null;
     }
 
     public void DeactiveWeapon()
     {
-        ISActive = false;
+        M_ISActive = false;
         RB.isKinematic = true;
-        S_point[0].gameObject.active = false;
+        S_point[0].gameObject.SetActive(false);
         VFX_Setup.enabled = false;
     }
 
-    IEnumerator ArmCountDown()
+
+
+    private void BarrelRestrict()
     {
-        yield return new WaitForSeconds(2f);
-        ISArmed = true;
-        transform.parent = null;
+        transform.localRotation = InitialLocalRot;
+        transform.localPosition = new Vector3(InitialLocalPos.x, InitialLocalPos.y, transform.localPosition.z);
+
+        if (transform.localPosition.z > BarrelLength)//脱离发射管，激活武器，不再限制方向，从发射车辆上面脱离
+        {
+            M_ISArmed = true;
+            IsInBarrel = false;
+            transform.parent = null;
+        }
     }
 
     void AddForces()
@@ -207,7 +219,7 @@ public class Torpedo_Movement : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (ISArmed == true)
+        if (M_ISArmed == true)
         {
             Debug.Log(other.gameObject.name);
             Explode();

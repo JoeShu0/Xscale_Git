@@ -11,6 +11,8 @@ public class Sub_WeaponManager : MonoBehaviour {
 
     public GameObject[] AvailableTorpedos;
 
+    Rigidbody RB;
+
     // Use this for initialization
     void Start ()
     {
@@ -23,14 +25,27 @@ public class Sub_WeaponManager : MonoBehaviour {
                 Torp_LPs.Add(Children[i]);
         }
 
-        Load_TorpLP(Torp_LPs[0], AvailableTorpedos[0]);
+
+        RB = GetComponent<Rigidbody>();
+
+        foreach (var Torp_LP in Torp_LPs)
+        {
+            Load_TorpLP(Torp_LP, AvailableTorpedos[0]);
+        }
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
         if (Input.GetKey("f"))
-            Fire_TorpLP(Torp_LPs[0]);
+            foreach (var Torp_LP in Torp_LPs)
+                if (Torp_LP.childCount != 0)
+                {
+                    //if (Torp_LP.GetChild(0).transform.localPosition == Vector3.zero)
+                        //continue;
+                    Fire_TorpLP(Torp_LP);
+                    break;
+                }
     }
 
     private void Load_TorpLP(Transform LP, GameObject Weapon)
@@ -48,6 +63,7 @@ public class Sub_WeaponManager : MonoBehaviour {
         TM.ActiveWeapon();
         WP.transform.position = LP.position;
         WP.transform.rotation = LP.rotation;
+        WP.GetComponent<Rigidbody>().velocity = RB.velocity;
         TM.TargetTransform = Target;
     }
 }
