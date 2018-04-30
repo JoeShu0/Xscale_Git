@@ -48,7 +48,7 @@ Shader "Custom/WaterShader_Test05"
 		_CriticalAngle("CosTotalReflectionAngle",range(0,1)) = 0.7 //完全反射角的Cos值
 		_RefracDistortion("RefracDistortion", Range(0, 10000)) = 10//折射偏移程度
 		_RefractionAmount("RefractionBaseAmount",range(0,1)) = 0.5//折射比例
-		//_RefrMaxDistance("RefrMaxDistance",range(100,1000)) = 500
+		_RefrMaxDistance("RefrMaxDistance",range(100,1000)) = 500
 	
 		//_WaterFogColor("FogColor",Color) = (1,1,1,1)
 		_Specular("Specular", Range(1.0, 500.0)) = 250.0
@@ -502,7 +502,7 @@ Shader "Custom/WaterShader_Test05"
 		
 		
 		float DistToCamera = distance(_WorldSpaceCameraPos, worldPos);
-		_RefractionAmount = 1 - clamp(DistToCamera / _RefrMaxDistance + _RefractionAmount, 0, 1);//折射比例按照距离递减
+		_RefractionAmount = clamp(DistToCamera / _RefrMaxDistance + _RefractionAmount, 0, 1);//折射比例按照距离递减
 
 		float3 VertWorldNormal = float3(i.TtoW0.z, i.TtoW1.z, i.TtoW2.z);
 		float4 FinalTangentNormal =float4( VertWorldNormal.xz + norm.xy,1,1);
@@ -561,7 +561,7 @@ Shader "Custom/WaterShader_Test05"
 		//****************************************判断相机相对水面像素的位置******************************************
 		float refraRatio = dot(normalize(worldNormal), (normalize(_WorldSpaceCameraPos - worldPos)));
 		fixed4 fragColor;
-		if (refraRatio > 0 || _CameraDepth < 0)//水面以上,此时通过在水面shader中重建世界坐标计算雾效深度实现雾效
+		if (refraRatio > 0 || _CameraDepth < 0)//水面以上
 		{
 			/*
 			float3 ViewDir = _WorldSpaceCameraPos - ReBuildworldPos;
@@ -571,7 +571,7 @@ Shader "Custom/WaterShader_Test05"
 			refracCol.rgb = lerp(_FogColor.rgb, refracCol.rgb, fogDensity);
 			*/
 			//fragColor.rgb = ((i.BlendFactor.r) * 5);
-			fragColor.rgb = (reflecColor * fresnel * 0.5 + refracCol * (1 - fresnel * 0.75)*0.5) / 2 + spec*0.5 +texColor * max(0, abs(i.BlendFactor.r) * (i.BlendFactor.r))* _Color;
+			fragColor.rgb = (reflecColor * fresnel * _RefractionAmount + refracCol * (1 - fresnel * 1)*0.75)*0.75 + spec*0.5 +texColor * max(0, abs(i.BlendFactor.r) * (i.BlendFactor.r))* _Color;
 			//fragColor.rgb = float3(1,0,0);
 		}
 		

@@ -68,8 +68,9 @@ Material:
     - _NormalAddFactor: 0.1
     - _PlaneSize: 500
     - _ReflecDistortion: 800
+    - _RefrMaxDistance: 250
     - _RefracDistortion: 800
-    - _RefractionAmount: 0.5
+    - _RefractionAmount: 0.13
     - _Smooth: 1
     - _Specular: 68
     - _SubMD01: 77
