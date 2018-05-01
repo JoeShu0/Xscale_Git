@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _CausticsTex:
-        m_Texture: {fileID: 2800000, guid: 2398fa65f54634a419b517934f093f63, type: 3}
+        m_Texture: {fileID: 2800000, guid: ee749088c0bb61e45ad8671f64ffe7fd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 4.71, y: 0}
     - _EmissionTex:
@@ -27,7 +27,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 86aaa3113f6d7694097499843c89c667, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalTex:
@@ -35,20 +35,20 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SmoothnessTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 00254d98bd7f57b4a82a9638eda750c3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecularTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 3e3dbcaa73701a348ac22602581eb29b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _CausticsFactor: 0.25
+    - _CausticsFactor: 0.16
     - _CausticsScale: 10
     - _EmissionIntensity: 0
     m_Colors:
     - _AirFogColorDensity: {r: 0.6020761, g: 0.6945001, b: 0.85294116, a: 0.019607844}
     - _CausticsDrift: {r: 1, g: 1, b: 1, a: 1}
     - _CausticsFadeDistance: {r: 15, g: 100, b: 0, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.18382353, g: 0.18382353, b: 0.18382353, a: 1}
     - _WaterFogColorDensity: {r: 0.037954155, g: 0.17215578, b: 0.19117647, a: 0.216}

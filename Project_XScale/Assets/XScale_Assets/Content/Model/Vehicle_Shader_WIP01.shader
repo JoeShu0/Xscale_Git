@@ -101,26 +101,7 @@
 					if (_WorldSpaceCameraPos.y > 0)
 						WaterLength = PixelSideLength;
 				}
-				/*
-				if (IN.worldPos.y * _WorldSpaceCameraPos.y < 0)
-				{
-					if (_WorldSpaceCameraPos.y < 0)
-					{
-						AirLength = Length * abs(IN.worldPos.y / (IN.worldPos - _WorldSpaceCameraPos).y);
-						WaterLength = Length - AirLength;
-					}
-					else
-					{
-						AirLength = Length * abs(_WorldSpaceCameraPos.y / (_WorldSpaceCameraPos - IN.worldPos).y);
-						WaterLength = Length - AirLength;
-					}
-				}
-				else if (_WorldSpaceCameraPos.y < 0)
-					WaterLength = Length;
-				else if (_WorldSpaceCameraPos.y > 0)
-					AirLength = Length;
 
-					*/
 				float AirFogDensity = exp(-_AirFogColorDensity.a/10 * abs(AirLength));
 				float WaterFogDensity = exp(-_WaterFogColorDensity.a / 10 * abs(WaterLength));
 				
@@ -148,11 +129,19 @@
 
 				fixed3 em = tex2D(_EmissionTex, IN.uv_EmissionTex);
 
+				c = c;
 				o.Alpha = c.a;
 				o.Normal = n;
 				o.Specular = sp;
 				o.Smoothness = sm;
 				o.Emission = em * _EmissionIntensity;
+				/*
+				if (IN.worldPos.y < 0)
+				{
+					c = c * clamp(exp(IN.worldPos.y/10),0.25,1);
+					o.Specular = sp*clamp(exp(IN.worldPos.y / 5), 0.01, 1);
+				}
+				*/
 
 				if (IN.worldPos.y < 0)
 				{

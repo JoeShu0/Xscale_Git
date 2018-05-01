@@ -571,7 +571,7 @@ Shader "Custom/WaterShader_Test05"
 			refracCol.rgb = lerp(_FogColor.rgb, refracCol.rgb, fogDensity);
 			*/
 			//fragColor.rgb = ((i.BlendFactor.r) * 5);
-			fragColor.rgb = (reflecColor * fresnel * _RefractionAmount + refracCol * (1 - fresnel * 1)*0.75)*0.75 + spec*0.5 +texColor * max(0, abs(i.BlendFactor.r) * (i.BlendFactor.r))* _Color;
+			fragColor.rgb = (reflecColor * fresnel * _RefractionAmount + refracCol * (1 - fresnel * 1)*0.75) + spec*0.5 +texColor * max(0, abs(i.BlendFactor.r) * (i.BlendFactor.r))* _Color;
 			//fragColor.rgb = float3(1,0,0);
 		}
 		
