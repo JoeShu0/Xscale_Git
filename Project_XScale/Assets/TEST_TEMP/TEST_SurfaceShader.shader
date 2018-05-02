@@ -85,12 +85,8 @@
 		return c;
 	}
 	*/
-	float getdepth(Input IN)
-	{
-		return 1;
-	}
 
-	half4 TWUNITY_BRDF_PBS(half3 diffColor, half3 specColor, half oneMinusReflectivity, half smoothness,
+	half4 TWUNITY_BRDF_PBS(half3 diffColor, half3 specColor, half oneMinusReflectivity, half smoothness,half Alpha,
 		float3 normal, float3 viewDir,
 		UnityLight light, UnityIndirect gi)
 	{
@@ -106,10 +102,10 @@
 
 		half grazingTerm = saturate(smoothness + (1 - oneMinusReflectivity));
 
-		//half3 color = BRDF3_Direct(diffColor, specColor, rlPow4, smoothness);
-		//color *= light.color * nl;
-		half3 color = diffColor;
-		//color = lerp(diffColor, color, getdepth(IN));
+		half3 color = BRDF3_Direct(diffColor, specColor, rlPow4, smoothness);
+		color *= light.color * nl;
+	
+		color = lerp(diffColor, color, Alpha);
 
 		color += BRDF3_Indirect(diffColor, specColor, gi, grazingTerm, fresnelTerm);
 
@@ -129,7 +125,7 @@
 		half outputAlpha;
 		s.Albedo = PreMultiplyAlpha(s.Albedo, s.Alpha, oneMinusReflectivity, /*out*/ outputAlpha);
 
-		half4 c = TWUNITY_BRDF_PBS(s.Albedo, specColor, oneMinusReflectivity, s.Smoothness, s.Normal, viewDir, gi.light, gi.indirect);
+		half4 c = TWUNITY_BRDF_PBS(s.Albedo, specColor, oneMinusReflectivity, s.Smoothness,s.Alpha, s.Normal, viewDir, gi.light, gi.indirect);
 		//half4 c = s.Albedo;
 		c.a = outputAlpha;
 		//return float4(0.5, 0.5, 0.5, 1);
@@ -223,12 +219,13 @@
 
 		fixed3 em = tex2D(_EmissionTex, IN.uv_EmissionTex);
 
-		c = c;
-		o.Alpha = c.a;
+		c = c * clamp(exp(IN.worldPos.y / 15), 0.05, 1);
+		o.Alpha = clamp(exp(IN.worldPos.y / 15), 0, 1);
 		o.Normal = n;
-		o.Metallic = sp;
-		o.Smoothness = sm;
+		o.Metallic = sp* clamp(exp(IN.worldPos.y / 15), 0.05, 1);
+		o.Smoothness = sm * clamp(exp(IN.worldPos.y / 15), 0.05, 1);
 		o.Emission = em * _EmissionIntensity;
+		o.Occlusion = 1;
 		/*
 		if (IN.worldPos.y < 0)
 		{
