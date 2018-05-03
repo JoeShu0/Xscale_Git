@@ -65,55 +65,12 @@
 		float3 worldNormal;
 		INTERNAL_DATA
 	};
-	/*
-	half3 BRDF3_Direct(half3 diffColor, half3 specColor, half rlPow4, half smoothness)
+
+
+	inline half4 LightingCustomDefaultGI(SurfaceOutputStandard  s, half3 viewDir, UnityGI gi )
 	{
-		half LUT_RANGE = 16.0; // must match range in NHxRoughness() function in GeneratedTextures.cpp
-							   // Lookup texture to save instructions
-		half specular = tex2D(unity_NHxRoughness, half2(rlPow4, SmoothnessToPerceptualRoughness(smoothness))).UNITY_ATTEN_CHANNEL * LUT_RANGE;
-#if defined(_SPECULARHIGHLIGHTS_OFF)
-		specular = 0.0;
-#endif
-
-		return diffColor + specular * specColor;
-	}
-
-	half3 BRDF3_Indirect(half3 diffColor, half3 specColor, UnityIndirect indirect, half grazingTerm, half fresnelTerm)
-	{
-		half3 c = indirect.diffuse * diffColor;
-		c += indirect.specular * lerp(specColor, grazingTerm, fresnelTerm);
-		return c;
-	}
-	*/
-
-	half4 TWUNITY_BRDF_PBS(half3 diffColor, half3 specColor, half oneMinusReflectivity, half smoothness,half Alpha,
-		float3 normal, float3 viewDir,
-		UnityLight light, UnityIndirect gi)
-	{
-		float3 reflDir = reflect(viewDir, normal);
-
-		half nl = saturate(dot(normal, light.dir));
-		half nv = saturate(dot(normal, viewDir));
-
-		// Vectorize Pow4 to save instructions
-		half2 rlPow4AndFresnelTerm = Pow4(float2(dot(reflDir, light.dir), 1 - nv));  // use R.L instead of N.H to save couple of instructions
-		half rlPow4 = rlPow4AndFresnelTerm.x; // power exponent must match kHorizontalWarpExp in NHxRoughness() function in GeneratedTextures.cpp
-		half fresnelTerm = rlPow4AndFresnelTerm.y;
-
-		half grazingTerm = saturate(smoothness + (1 - oneMinusReflectivity));
-
-		half3 color = BRDF3_Direct(diffColor, specColor, rlPow4, smoothness);
-		color *= light.color * nl;
-	
-		color = lerp(diffColor, color, Alpha);
-
-		color += BRDF3_Indirect(diffColor, specColor, gi, grazingTerm, fresnelTerm);
-
-		return half4(color, 1);
-	}
-
-	inline half4 LightingTransWater(SurfaceOutputStandard s, float3 viewDir, UnityGI gi)
-	{
+		//return float4(1, 0, 0, 1);
+		//return LightingTransWater(s, viewDir, gi);
 		s.Normal = normalize(s.Normal);
 
 		half oneMinusReflectivity;
@@ -125,31 +82,23 @@
 		half outputAlpha;
 		s.Albedo = PreMultiplyAlpha(s.Albedo, s.Alpha, oneMinusReflectivity, /*out*/ outputAlpha);
 
-		half4 c = TWUNITY_BRDF_PBS(s.Albedo, specColor, oneMinusReflectivity, s.Smoothness,s.Alpha, s.Normal, viewDir, gi.light, gi.indirect);
-		//half4 c = s.Albedo;
+		UnityLight CUSLight = gi.light;
+		CUSLight.color *= s.Alpha;
+
+		half4 c = UNITY_BRDF_PBS(s.Albedo, specColor, oneMinusReflectivity, s.Smoothness, s.Normal, viewDir, CUSLight, gi.indirect);
 		c.a = outputAlpha;
-		//return float4(0.5, 0.5, 0.5, 1);
 		return c;
 	}
-	inline void LightingTransWater_GI(SurfaceOutputStandard s,UnityGIInput data,inout UnityGI gi)
+	
+	inline void LightingCustomDefaultGI_GI(SurfaceOutputStandard  s,UnityGIInput data,inout UnityGI gi )
 	{
+		//LightingTransWater_GI(s, data, gi);
 #if defined(UNITY_PASS_DEFERRED) && UNITY_ENABLE_REFLECTION_BUFFERS
 		gi = UnityGlobalIllumination(data, s.Occlusion, s.Normal);
 #else
 		Unity_GlossyEnvironmentData g = UnityGlossyEnvironmentSetup(s.Smoothness, data.worldViewDir, s.Normal, lerp(unity_ColorSpaceDielectricSpec.rgb, s.Albedo, s.Metallic));
 		gi = UnityGlobalIllumination(data, s.Occlusion, s.Normal, g);
 #endif
-	}
-
-	inline half4 LightingCustomDefaultGI(SurfaceOutputStandard  s, half3 viewDir, UnityGI gi )
-	{
-		//return float4(1, 0, 0, 1);
-		return LightingTransWater(s, viewDir, gi);
-	}
-	
-	inline void LightingCustomDefaultGI_GI(SurfaceOutputStandard  s,UnityGIInput data,inout UnityGI gi)
-	{
-		LightingTransWater_GI(s, data, gi);
 	}
 
 
@@ -219,20 +168,14 @@
 
 		fixed3 em = tex2D(_EmissionTex, IN.uv_EmissionTex);
 
-		c = c * clamp(exp(IN.worldPos.y / 15), 0.05, 1);
+		c = c *clamp(exp(IN.worldPos.y / 5), 0.15, 1);
 		o.Alpha = clamp(exp(IN.worldPos.y / 15), 0, 1);
 		o.Normal = n;
-		o.Metallic = sp* clamp(exp(IN.worldPos.y / 15), 0.05, 1);
-		o.Smoothness = sm * clamp(exp(IN.worldPos.y / 15), 0.05, 1);
+		o.Metallic = sp;// *clamp(exp(IN.worldPos.y / 15), 0.05, 1);
+		o.Smoothness = sm *clamp(exp(IN.worldPos.y / 15), 0.5, 1);
 		o.Emission = em * _EmissionIntensity;
 		o.Occlusion = 1;
-		/*
-		if (IN.worldPos.y < 0)
-		{
-		c = c * clamp(exp(IN.worldPos.y/10),0.25,1);
-		o.Specular = sp*clamp(exp(IN.worldPos.y / 5), 0.01, 1);
-		}
-		*/
+
 
 		if (IN.worldPos.y < 0)
 		{
