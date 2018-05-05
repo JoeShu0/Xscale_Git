@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 490878ec4d45f4f438a4aef21de5a54e
-timeCreated: 1524494076
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -312,6 +310,7 @@ ModelImporter:
     13700002: Mesh
     13700004: MESH_Xeawolf
     13700006: MESH_XK48
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -331,6 +330,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

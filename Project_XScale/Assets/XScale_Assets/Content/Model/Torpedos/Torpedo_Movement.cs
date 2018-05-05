@@ -123,7 +123,8 @@ public class Torpedo_Movement : MonoBehaviour {
             if (SurfacePointCal.CalculateWaterPosition(S_point[0].position) < S_point[0].position.y)
                 ActiveThrust = 0;
 
-            AddForces();
+            AddDragBuoyancyForces();
+            AddThrust();
         }
 
         //transform.localRotation = InitialLocalRot;
@@ -165,7 +166,7 @@ public class Torpedo_Movement : MonoBehaviour {
         }
     }
 
-    void AddForces()
+    void AddDragBuoyancyForces()
     {
         //******************************************Buoyancy&drag***************************************
         List<Vector3> UnderWaterParts = new List<Vector3>();
@@ -202,9 +203,13 @@ public class Torpedo_Movement : MonoBehaviour {
                 //Debug.DrawLine(transform.position, transform.position + (SideDrag + UpwardDrag + ForwardDrag) * UnderWaterParts.Count/100f, Color.red);
             }
         }
+    }
+
+    void AddThrust()
+    {
         //***************************************Thrust&rudder&elevator************************************************
         Vector3 RencorrectVector = (TargetPos - transform.position).normalized - transform.forward;
-        RB.AddForceAtPosition((S_point[0].forward - RencorrectVector * SteerForce*0.1f * RB.velocity.magnitude) * ActiveThrust, S_point[0].position);
+        RB.AddForceAtPosition((S_point[0].forward - RencorrectVector * SteerForce * 0.1f * RB.velocity.magnitude) * ActiveThrust, S_point[0].position);
     }
 
     float CalculateBuoyancy(float D)

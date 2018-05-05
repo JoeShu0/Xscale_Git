@@ -571,13 +571,13 @@ Shader "Custom/WaterShader_Test05"
 			refracCol.rgb = lerp(_FogColor.rgb, refracCol.rgb, fogDensity);
 			*/
 			//fragColor.rgb = ((i.BlendFactor.r) * 5);
-			fragColor.rgb = (reflecColor * fresnel * _RefractionAmount + refracCol * (1 - fresnel * 1)*0.75) + spec*0.5 +texColor * max(0, abs(i.BlendFactor.r) * (i.BlendFactor.r))* _Color;
+			fragColor.rgb = (reflecColor * fresnel * _RefractionAmount + refracCol * (1 - fresnel * 1)*0.75) + spec*0.5 +texColor * max(0, abs(i.BlendFactor.r) * (i.BlendFactor.r)*0.5)* _Color;
 			//fragColor.rgb = float3(1,0,0);
 		}
 		
-		else if (refraRatio < -_CriticalAngle)//水面下，但不完全反射,此时通过PostEffect在相机上挂载的脚本实现雾效，详见脚本fogwithdepthtexture
+		else if (refraRatio < -_CriticalAngle)//水面下，但不完全反射,
 		{
-			fragColor.rgb = reflecColor * 0.1 + refracCol * 0.5 * (max(0, (1 + (refraRatio + _CriticalAngle) * 50)) + 1)*float3(1, 1, 1) +texColor * max(0, (i.BlendFactor.r) * 1) * _Color;
+			fragColor.rgb = reflecColor * 0.1 + refracCol * 0.5 * (max(0, (1 + (refraRatio + _CriticalAngle) * 50)) + 1)*float3(1, 1, 1) +texColor * max(0, (i.BlendFactor.r) * 0.5) * _Color;
 
 			//fragColor.rgb = (DistToCamera / 100, 1, 1, 1);// lerp(fragColor.rgb, _FogColor, DistToCamera / 10);
 		}

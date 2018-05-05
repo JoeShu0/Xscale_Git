@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 8b090a10b11a2f04893c42e06a88dc10
-timeCreated: 1522600776
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -142,6 +140,7 @@ ModelImporter:
     13700000: Mesh
     13700002: TorpedoSize_12x251
     13700004: CruiseMissile_Hull
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -161,6 +160,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
