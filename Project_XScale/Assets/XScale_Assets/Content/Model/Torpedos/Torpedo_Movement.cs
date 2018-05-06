@@ -16,7 +16,7 @@ public class Torpedo_Movement : MonoBehaviour {
 
     List<Transform> B_Points = new List<Transform>();
     List<Transform> S_point = new List<Transform>();
-    Transform RudderMesh, ElevatorMesh, Arm_point;
+    Transform RudderMesh, ElevatorMesh, Arm_point , Hatch;
     Vector3 UnderwaterCenter;
     public float WaterDrag = 1;
     public Vector3 COMoffset = new Vector3(0, -1, 0);
@@ -49,13 +49,23 @@ public class Torpedo_Movement : MonoBehaviour {
     Vector3 InitialLocalPos;
     Quaternion InitialLocalRot;//记录初始的局部坐标
 
+
+
+    public enum Type
+    {
+        Torpedo,
+        MissileLaunchTube,
+    }
+
+    public Type Torp_Type;
+
     // Use this for initialization
     private void Awake()
     {
         RB = GetComponent<Rigidbody>();
 
         SurfacePointCal = transform.gameObject.AddComponent<CalculateSurfacePoint>() as CalculateSurfacePoint;
-        RB = GetComponent<Rigidbody>();
+        //RB = GetComponent<Rigidbody>();
         SurfacePointCal = GetComponent<CalculateSurfacePoint>();
 
         VFX_Setup = GetComponent<VFX_RefleSetup>();
@@ -74,6 +84,8 @@ public class Torpedo_Movement : MonoBehaviour {
             //ElevatorMesh = Children[i];
             //if (Children[i].name.Contains("Arm_point"))
             //Arm_point = Children[i];
+            if (Children[i].name.Contains("_Hatch"))
+                S_point.Add(Children[i]);
         }
         RB.centerOfMass = COMoffset;
         //Debug.Log("Get "+B_Points.Count);
@@ -112,16 +124,35 @@ public class Torpedo_Movement : MonoBehaviour {
                 Debug.Log("Setting Up SurfacePointCalculator for " + transform.gameObject.name);
                 return;
             }
-
-            if (TargetTransform == null)
-                TargetPos = new Vector3(transform.forward.x, 0, transform.forward.z) * 10 + transform.position;
-            else
-                TargetPos = TargetTransform.position;
-            Debug.DrawLine(transform.position, TargetPos, Color.cyan);
-
             ActiveThrust = Thrust;
             if (SurfacePointCal.CalculateWaterPosition(S_point[0].position) < S_point[0].position.y)
                 ActiveThrust = 0;
+            switch (Torp_Type)
+            {
+                case Type.Torpedo:
+                    {
+                        if (TargetTransform == null)
+                            TargetPos = new Vector3(transform.forward.x, 0, transform.forward.z) * 10 + transform.position;
+                        else
+                            TargetPos = TargetTransform.position;
+                        Debug.DrawLine(transform.position, TargetPos, Color.cyan);
+                        break;
+                    }
+                case Type.MissileLaunchTube:
+                    {
+                        TargetPos = new Vector3(transform.position.x ,0, transform.position.z);
+                        Debug.DrawLine(transform.position, TargetPos, Color.cyan);
+                        if (transform.position.y > 0)
+                        {
+                            OpenTube();
+                            //M_ISActive = false;
+                            ActiveThrust = 0;
+                            Destroy(gameObject, 10);
+                        }  
+                        break;
+                    }
+            }
+
 
             AddDragBuoyancyForces();
             AddThrust();
@@ -136,7 +167,7 @@ public class Torpedo_Movement : MonoBehaviour {
     {
         S_point[0].gameObject.SetActive(true);
         VFX_Setup.enabled = true;
-        RB.isKinematic = false;
+        GetComponent<Rigidbody>().isKinematic = false;
         M_ISActive = true;
         IsInBarrel = true;
         //StartCoroutine(ArmCountDown());
@@ -146,7 +177,7 @@ public class Torpedo_Movement : MonoBehaviour {
     public void DeactiveWeapon()
     {
         M_ISActive = false;
-        RB.isKinematic = true;
+        GetComponent<Rigidbody>().isKinematic = true;
         S_point[0].gameObject.SetActive(false);
         VFX_Setup.enabled = false;
     }
@@ -226,8 +257,21 @@ public class Torpedo_Movement : MonoBehaviour {
     {
         if (M_ISArmed == true)
         {
-            Debug.Log(other.gameObject.name);
-            Explode();
+            switch (Torp_Type)
+            {
+                case Type.Torpedo:
+                    {
+                        Debug.Log(other.gameObject.name);
+                        Explode();
+                        break;
+                    }
+                case Type.MissileLaunchTube:
+                    {
+                        Debug.Log(other.gameObject.name);
+                        //***********************action needed*****************
+                        break;
+                    }
+            }
         }
         
     }
@@ -251,7 +295,7 @@ public class Torpedo_Movement : MonoBehaviour {
         {
             ParticleSystem.EmissionModule EM = PS.emission;
             EM.rateOverTime = 0;
-            Destroy(PS.gameObject, 3f);
+            Destroy(PS.gameObject, 10f);
             PS.transform.parent = null;
         }
         
@@ -263,5 +307,18 @@ public class Torpedo_Movement : MonoBehaviour {
         //WaterTrail.emission.rateOverTime = 0;
         Destroy(transform.gameObject);
        
+    }
+
+    private void OpenTube()
+    {
+        Debug.Log("OpenTube HATCH");
+        ParticleSystem[] WaterTrail = GetComponentsInChildren<ParticleSystem>();
+        foreach (var PS in WaterTrail)
+        {
+            ParticleSystem.EmissionModule EM = PS.emission;
+            EM.rateOverTime = 0;
+            Destroy(PS.gameObject, 10f);
+            PS.transform.parent = null;
+        }
     }
 }

@@ -30,7 +30,7 @@ public class Sub_WeaponManager : MonoBehaviour {
 
         foreach (var Torp_LP in Torp_LPs)
         {
-            Load_TorpLP(Torp_LP, AvailableTorpedos[0]);
+            Load_TorpLP(Torp_LP, AvailableTorpedos[1]);
         }
     }
 	
