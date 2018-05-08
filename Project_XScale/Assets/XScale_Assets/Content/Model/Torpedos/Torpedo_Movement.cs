@@ -42,6 +42,9 @@ public class Torpedo_Movement : MonoBehaviour {
 
     [HideInInspector] public bool M_ISActive = false;//是否处于激活状态，激活后能够单独计算动力，阻力
     [HideInInspector] public bool M_ISArmed = false;//是否会接触就爆炸
+    bool M_ISHatchOpen = false;//
+    bool M_ISEngineActive = true;//
+
 
     private bool IsInBarrel;//是否还在发射管当中，在发射管中时，运动方向会受到限制
     private float BarrelLength = 5;//发射管长度
@@ -85,7 +88,7 @@ public class Torpedo_Movement : MonoBehaviour {
             //if (Children[i].name.Contains("Arm_point"))
             //Arm_point = Children[i];
             if (Children[i].name.Contains("_Hatch"))
-                S_point.Add(Children[i]);
+                Hatch = Children[i];
         }
         RB.centerOfMass = COMoffset;
         //Debug.Log("Get "+B_Points.Count);
@@ -142,11 +145,12 @@ public class Torpedo_Movement : MonoBehaviour {
                     {
                         TargetPos = new Vector3(transform.position.x ,0, transform.position.z);
                         Debug.DrawLine(transform.position, TargetPos, Color.cyan);
-                        if (transform.position.y > 0)
+                        if (transform.position.y > 0 && M_ISHatchOpen == false)
                         {
                             OpenTube();
-                            //M_ISActive = false;
-                            ActiveThrust = 0;
+                            M_ISHatchOpen = true;
+
+                            M_ISEngineActive = false;
                             Destroy(gameObject, 10);
                         }  
                         break;
@@ -155,7 +159,8 @@ public class Torpedo_Movement : MonoBehaviour {
 
 
             AddDragBuoyancyForces();
-            AddThrust();
+            if(M_ISEngineActive == true)
+                AddThrust();
         }
 
         //transform.localRotation = InitialLocalRot;
@@ -317,8 +322,17 @@ public class Torpedo_Movement : MonoBehaviour {
         {
             ParticleSystem.EmissionModule EM = PS.emission;
             EM.rateOverTime = 0;
-            Destroy(PS.gameObject, 10f);
+            
             PS.transform.parent = null;
+            Destroy(PS.gameObject, 10f);
         }
+        Hatch.parent = null;
+        Rigidbody HatchRB =  Hatch.gameObject.AddComponent<Rigidbody>() as Rigidbody;
+        HatchRB.velocity = RB.velocity;
+        HatchRB.mass = 0.02f;
+        HatchRB.angularDrag = 0f;
+        HatchRB.AddForce(transform.up * 5);
+        HatchRB.AddTorque(-transform.right * 5000);
+        Destroy(Hatch.gameObject, 3f);
     }
 }
