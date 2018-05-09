@@ -1,0 +1,143 @@
+fileFormatVersion: 2
+guid: 3ae85fafbcb90724e9e10f77639fdd13
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: BackFin01A
+    100002: BackFin01B
+    100004: BackFin02A
+    100006: BackFin02B
+    100008: BackFin03A
+    100010: BackFin03B
+    100012: BackFin04A
+    100014: BackFin04B
+    100016: BackFins
+    100018: Booster
+    100020: BoosterFin01
+    100022: BoosterFin02
+    100024: BoosterFin03
+    100026: BoosterFin04
+    100028: BoosterFins
+    100030: FrontFin01
+    100032: FrontFin02
+    100034: FrontFin03
+    100036: FrontFin04
+    100038: FrontFins
+    100040: //RootNode
+    100042: S_point_001
+    100044: S_point_002
+    100046: Xarpoon_Booster_MESH
+    100048: Xarpoon_MESH
+    400000: BackFin01A
+    400002: BackFin01B
+    400004: BackFin02A
+    400006: BackFin02B
+    400008: BackFin03A
+    400010: BackFin03B
+    400012: BackFin04A
+    400014: BackFin04B
+    400016: BackFins
+    400018: Booster
+    400020: BoosterFin01
+    400022: BoosterFin02
+    400024: BoosterFin03
+    400026: BoosterFin04
+    400028: BoosterFins
+    400030: FrontFin01
+    400032: FrontFin02
+    400034: FrontFin03
+    400036: FrontFin04
+    400038: FrontFins
+    400040: //RootNode
+    400042: S_point_001
+    400044: S_point_002
+    400046: Xarpoon_Booster_MESH
+    400048: Xarpoon_MESH
+    2100000: No Name
+    4300000: Xarpoon_MESH
+    4300002: Xarpoon_Booster_MESH
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Xarpoon_Booster_MESH
+    13700002: Xarpoon_MESH
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

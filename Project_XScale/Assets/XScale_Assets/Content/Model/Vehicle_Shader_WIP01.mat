@@ -35,11 +35,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SmoothnessTex:
-        m_Texture: {fileID: 2800000, guid: 0e8e470000da3ad40b220d210b192329, type: 3}
+        m_Texture: {fileID: 2800000, guid: 86aaa3113f6d7694097499843c89c667, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecularTex:
-        m_Texture: {fileID: 2800000, guid: 6d227e72a5fd50c45984cdcb234128a2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 16b1dccb1b4469348b524cc73df24c8e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -50,5 +50,5 @@ Material:
     - _AirFogColorDensity: {r: 0.6020761, g: 0.6945001, b: 0.85294116, a: 0.019607844}
     - _CausticsDrift: {r: 1, g: 1, b: 1, a: 1}
     - _CausticsFadeDistance: {r: 15, g: 100, b: 0, a: 0}
-    - _Color: {r: 0.18382353, g: 0.18382353, b: 0.18382353, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _WaterFogColorDensity: {r: 0.037954155, g: 0.17215578, b: 0.19117647, a: 0.216}

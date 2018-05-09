@@ -334,5 +334,7 @@ public class Torpedo_Movement : MonoBehaviour {
         HatchRB.AddForce(transform.up * 5);
         HatchRB.AddTorque(-transform.right * 5000);
         Destroy(Hatch.gameObject, 3f);
+
+        RB.mass = 0.85f * RB.mass;
     }
 }
