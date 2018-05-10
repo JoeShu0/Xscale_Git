@@ -9,6 +9,7 @@ public class Torpedo_Movement : MonoBehaviour {
     public float SteerForce = 1;
     float ActiveThrust = 0;
     public float ExplosionForce = 10000;
+    public float MinDepth = 2.5f;
     //public Collider ArmTrigger;
 
     [HideInInspector] public Rigidbody RB;
@@ -135,7 +136,11 @@ public class Torpedo_Movement : MonoBehaviour {
                 case Type.Torpedo:
                     {
                         if (TargetTransform == null)
+                        {
                             TargetPos = new Vector3(transform.forward.x, 0, transform.forward.z) * 10 + transform.position;
+                            if (TargetPos.y > -MinDepth)
+                                TargetPos.y = -MinDepth;
+                        }
                         else
                             TargetPos = TargetTransform.position;
                         Debug.DrawLine(transform.position, TargetPos, Color.cyan);

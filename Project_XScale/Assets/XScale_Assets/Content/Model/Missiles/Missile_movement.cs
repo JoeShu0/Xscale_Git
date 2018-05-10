@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Missile_movement : MonoBehaviour {
+public class Missile_Movement : MonoBehaviour {
 
     [HideInInspector] public Rigidbody RB;
     [HideInInspector] public CalculateSurfacePoint SurfacePointCal;
@@ -10,7 +10,8 @@ public class Missile_movement : MonoBehaviour {
 
     public float ExplosionForce = 10000;
     //List<Transform> B_Points = new List<Transform>();
-    Transform NozzlePoint;
+    List<Transform> S_point = new List<Transform>();
+    List<Transform> Boosters = new List<Transform>();
     Transform RudderMesh, ElevatorMesh, Arm_point;
     Vector3 UnderwaterCenter;
     public float AirDrag = 1;
@@ -19,14 +20,15 @@ public class Missile_movement : MonoBehaviour {
     public float SideDragFator = 1;
     public float UpwardDragFactor = 1f;
     public float SteerForce = 1;
-    //float Rudder = 0, Elevator = 0;
 
-    //public float BuoyancyFactor = 5;
-    //float MAXBuoyancyPerPoint;
-    //public float MAXBuoyancyDepth = 0.1f;
+    [HideInInspector] public bool M_ISActive = false;//是否处于激活状态，激活后能够单独计算动力，阻力
+    [HideInInspector] public bool M_ISArmed = false;//是否会接触就爆炸
 
-    //bool IsSetupComplete = false;
-    //bool EnablePropeller = false;
+    private bool IsInBarrel;//是否还在发射管当中，在发射管中时，运动方向会受到限制
+    private float BarrelLength = 5;//发射管长度
+
+    Vector3 InitialLocalPos;
+    Quaternion InitialLocalRot;//记录初始的局部坐标
 
     public Transform TargetTransform;
     Vector3 TargetPos;
@@ -35,9 +37,7 @@ public class Missile_movement : MonoBehaviour {
     public GameObject ExplosionParticle;
 
 
-
-    // Use this for initialization
-    void Start()
+    private void Awake()
     {
         SurfacePointCal = transform.gameObject.AddComponent<CalculateSurfacePoint>() as CalculateSurfacePoint;
         RB = GetComponent<Rigidbody>();
@@ -47,21 +47,21 @@ public class Missile_movement : MonoBehaviour {
         for (int i = 0; i < Children.Length; i++)
         {
             //if (Children[i].name.Contains("Rudder"))
-                //RudderMesh = Children[i];
+            //RudderMesh = Children[i];
             //if (Children[i].name.Contains("Elevator"))
-                //ElevatorMesh = Children[i];
-            if (Children[i].name.Contains("MainNozzle"))
-                NozzlePoint = Children[i];
+            //ElevatorMesh = Children[i];
+            if (Children[i].name.Contains("S_Point"))
+                S_point.Add(Children[i]);
+            if (Children[i].name.Contains("_Booter"))
+                Boosters.Add(Children[i]);
         }
         RB.centerOfMass = COMoffset;
-        //Debug.Log("Get "+B_Points.Count);
-        //MAXBuoyancyPerPoint = RB.mass * BuoyancyFactor / B_Points.Count;
+    }
 
-        //IsSetupComplete = true;
-
-        //EnablePropeller = true;
-
-        //CurrentRotation = transform.rotation;
+    // Use this for initialization
+    void Start()
+    {
+        
     }
 
     // Update is called once per frame
@@ -107,9 +107,9 @@ public class Missile_movement : MonoBehaviour {
    
         //***************************************Thrust&rudder&elevator************************************************
         Vector3 RencorrectVector = (TargetPos - transform.position).normalized - transform.forward;
-        Vector3 FinalTrustVector = (NozzlePoint.forward - RencorrectVector * SteerForce - (Vector3.up*0.1f) / transform.position.y).normalized* Thrust;
-        RB.AddForceAtPosition(FinalTrustVector, NozzlePoint.position);
-        Debug.DrawLine(NozzlePoint.position, FinalTrustVector + NozzlePoint.position, Color.green);
+        Vector3 FinalTrustVector = (S_point[0].forward - RencorrectVector * SteerForce - (Vector3.up*0.1f) / transform.position.y).normalized* Thrust;
+        RB.AddForceAtPosition(FinalTrustVector, S_point[0].position);
+        Debug.DrawLine(S_point[0].position, FinalTrustVector + S_point[0].position, Color.green);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -147,6 +147,26 @@ public class Missile_movement : MonoBehaviour {
         }
         //WaterTrail.emission.rateOverTime = 0;
         Destroy(transform.gameObject);
+    }
+
+
+    public void ActiveWeapon()
+    {
+        S_point[0].gameObject.SetActive(true);
+        //VFX_Setup.enabled = true;
+        GetComponent<Rigidbody>().isKinematic = false;
+        M_ISActive = true;
+        IsInBarrel = true;
+        //StartCoroutine(ArmCountDown());
+        //transform.parent = null;
+    }
+
+    public void DeactiveWeapon()
+    {
+        M_ISActive = false;
+        GetComponent<Rigidbody>().isKinematic = true;
+        S_point[0].gameObject.SetActive(false);
+       // VFX_Setup.enabled = false;
     }
 }
 
