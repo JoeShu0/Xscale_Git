@@ -1,4 +1,4 @@
-﻿Shader "Unlit/Blend_PreRender"
+﻿Shader "XScale/Blend_PreRender"
 {
 	Properties
 	{

@@ -26,6 +26,7 @@ public class Missile_Movement : MonoBehaviour {
 
     private bool IsInBarrel;//是否还在发射管当中，在发射管中时，运动方向会受到限制
     private float BarrelLength = 5;//发射管长度
+    bool M_ISEngineActive = true;//
 
     Vector3 InitialLocalPos;
     Quaternion InitialLocalRot;//记录初始的局部坐标
@@ -36,6 +37,15 @@ public class Missile_Movement : MonoBehaviour {
 
     public GameObject ExplosionParticle;
 
+    public SteerType M_SteerType;
+
+    float EngineBurnTime = 0;
+
+    public enum SteerType
+    {
+        AirDynamic,
+        VectorThrust,
+    }
 
     private void Awake()
     {
@@ -61,7 +71,16 @@ public class Missile_Movement : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        
+        //float EngineBurnTime = 0;
+    }
+    private void Update()
+    {
+        /*
+        EngineBurnTime += Time.deltaTime;
+        if (EngineBurnTime > 3 && M_ISEngineActive == true)
+            DetachBooster();
+            */
+
     }
 
     // Update is called once per frame
@@ -85,9 +104,6 @@ public class Missile_Movement : MonoBehaviour {
         AddForces();
     }
 
-
-     
-
     void AddForces()
     {
         
@@ -106,10 +122,35 @@ public class Missile_Movement : MonoBehaviour {
                 //Debug.DrawLine(transform.position, transform.position + (SideDrag + UpwardDrag + ForwardDrag) * UnderWaterParts.Count/100f, Color.red);
    
         //***************************************Thrust&rudder&elevator************************************************
-        Vector3 RencorrectVector = (TargetPos - transform.position).normalized - transform.forward;
-        Vector3 FinalTrustVector = (S_point[0].forward - RencorrectVector * SteerForce - (Vector3.up*0.1f) / transform.position.y).normalized* Thrust;
-        RB.AddForceAtPosition(FinalTrustVector, S_point[0].position);
-        Debug.DrawLine(S_point[0].position, FinalTrustVector + S_point[0].position, Color.green);
+        switch (M_SteerType)
+        {
+            case SteerType.AirDynamic:
+                {
+                    Vector3 RencorrectVector = (TargetPos - transform.position).normalized - transform.forward;
+                    RencorrectVector = transform.InverseTransformVector(RencorrectVector);
+                    RencorrectVector.z = 0f;
+                    RencorrectVector = transform.TransformVector(RencorrectVector);
+                    Vector3 TrustVector = S_point[0].forward * Thrust;
+                    //if(M_ISEngineActive)
+                    RB.AddForceAtPosition(TrustVector, S_point[0].position);
+                    float ForwardAirSpeed = Vector3.Dot(RB.velocity, transform.forward);
+                    RB.AddForceAtPosition((-RencorrectVector - (Vector3.up * 0.1f) / transform.position.y) * ForwardAirSpeed *0.6f, S_point[0].position);
+                    Debug.DrawLine(S_point[0].position, TrustVector + S_point[0].position, Color.green);
+                    break;
+                }
+            case SteerType.VectorThrust:
+                {
+                    Vector3 RencorrectVector = (TargetPos - transform.position).normalized - transform.forward;
+                    Vector3 FinalTrustVector = (S_point[0].forward - RencorrectVector * SteerForce - (Vector3.up * 0.1f) / transform.position.y).normalized * Thrust;
+                    RB.AddForceAtPosition(FinalTrustVector, S_point[0].position);
+                    Debug.DrawLine(S_point[0].position, FinalTrustVector + S_point[0].position, Color.green);
+                    break;
+                }
+
+        }
+          
+
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -167,6 +208,12 @@ public class Missile_Movement : MonoBehaviour {
         GetComponent<Rigidbody>().isKinematic = true;
         S_point[0].gameObject.SetActive(false);
        // VFX_Setup.enabled = false;
+    }
+
+    private void DetachBooster()
+    {
+        M_ISEngineActive = false;
+
     }
 }
 

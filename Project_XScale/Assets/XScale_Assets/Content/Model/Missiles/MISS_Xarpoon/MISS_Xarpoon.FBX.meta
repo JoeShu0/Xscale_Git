@@ -28,6 +28,8 @@ ModelImporter:
     100044: S_point_002
     100046: Xarpoon_Booster_MESH
     100048: Xarpoon_MESH
+    100050: S_Point_001
+    100052: S_Point_002
     400000: BackFin01A
     400002: BackFin01B
     400004: BackFin02A
@@ -53,6 +55,8 @@ ModelImporter:
     400044: S_point_002
     400046: Xarpoon_Booster_MESH
     400048: Xarpoon_MESH
+    400050: S_Point_001
+    400052: S_Point_002
     2100000: No Name
     4300000: Xarpoon_MESH
     4300002: Xarpoon_Booster_MESH

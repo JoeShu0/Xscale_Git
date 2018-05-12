@@ -1,14 +1,16 @@
-﻿Shader "Unlit/Blend_PostRender"
+﻿Shader "XScale/Blend_PostRender"
 {
 	Properties
 	{
+		_Color("TintColor",Color) = (1,1,1,0)
 		_MainTex ("Texture", 2D) = "white" {}
+		_AlphaMulti("AlphaMulti" ,range(0,2)) = 1
 	}
 	SubShader
 	{
 		Tags{ "Queue" = "Transparent+1" "IgnoreProjector" = "True" "RenderType" = "transparent" }
 		LOD 100
-		Blend SrcAlpha One
+			Blend SrcAlpha OneMinusSrcAlpha
 
 		Pass
 		{
@@ -36,6 +38,8 @@
 
 			sampler2D _MainTex;
 			float4 _MainTex_ST;
+			float _AlphaMulti;
+			fixed4 _Color;
 			
 			v2f vert (appdata v)
 			{
@@ -50,8 +54,10 @@
 			{
 				// sample the texture
 				fixed4 col = tex2D(_MainTex, i.uv);
+				col.rgb = col.rgb * _Color.rgb;// *(_Color.a - 0.5);
 				// apply fog
 				UNITY_APPLY_FOG(i.fogCoord, col);
+				col.a = col.a * _AlphaMulti;
 				return col;
 			}
 			ENDCG
