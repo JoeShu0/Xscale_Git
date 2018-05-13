@@ -444,7 +444,7 @@ Prefab:
     - target: {fileID: 114638413117520446, guid: b970d0ce698f1dd40852ae06a326fa78,
         type: 2}
       propertyPath: Thrust
-      value: 200
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4752193056535360, guid: b970d0ce698f1dd40852ae06a326fa78, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -471,12 +471,12 @@ Prefab:
     - target: {fileID: 114638413117520446, guid: b970d0ce698f1dd40852ae06a326fa78,
         type: 2}
       propertyPath: SideDragFator
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114638413117520446, guid: b970d0ce698f1dd40852ae06a326fa78,
         type: 2}
       propertyPath: UpwardDragFactor
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114638413117520446, guid: b970d0ce698f1dd40852ae06a326fa78,
         type: 2}
