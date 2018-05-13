@@ -26,7 +26,7 @@ public class Missile_Movement : MonoBehaviour {
 
     private bool IsInBarrel;//是否还在发射管当中，在发射管中时，运动方向会受到限制
     private float BarrelLength = 5;//发射管长度
-    bool M_ISEngineActive = true;//
+    public bool M_ISEngineActive = true;//
 
     Vector3 InitialLocalPos;
     Quaternion InitialLocalRot;//记录初始的局部坐标
@@ -101,26 +101,41 @@ public class Missile_Movement : MonoBehaviour {
         if(transform.position.y <= 0)
             Explode();
 
-        AddForces();
+        AddForces_Drag();
+        AddForces_Thrust();
     }
 
-    void AddForces()
+    void AddForces_Drag()
     {
-        
 
-                Vector3 ForwardDrag = -transform.forward *
+        /*
+        float ForwardVel = Vector3.Dot(transform.forward, RB.velocity);
+        Vector3 ForwardDrag = -transform.forward * ((ForwardVel * RB.velocity.magnitude) * AirDrag * ForwardDragFactor);
+        float SideVel = Vector3.Dot(transform.right, RB.velocity);
+        Vector3 SideDrag = -transform.right * ((SideVel * RB.velocity.magnitude) * AirDrag * SideDragFator);
+        float UpwardVel = Vector3.Dot(transform.up, RB.velocity);
+        Vector3 UpwardDrag = -transform.up * ((UpwardVel* RB.velocity.magnitude)  * AirDrag * UpwardDragFactor);
+        //Debug.DrawLine(UnderwaterCenter, UnderwaterCenter + UpwardDrag, Color.red);
+        RB.AddForceAtPosition((SideDrag + ForwardDrag) , transform.position - transform.forward *1f);//Do Not Use Forward Drag!!!! will Cause ship drift.
+        RB.AddForceAtPosition(ForwardDrag , transform.position - transform.forward * 1f);//forward Drag must line up with the thrust!!
+        //Debug.DrawLine(transform.position, transform.position + (SideDrag + UpwardDrag + ForwardDrag) * UnderWaterParts.Count/100f, Color.red);
+        */
+        Vector3 ForwardDrag = -transform.forward *
                     (Vector3.Dot(transform.forward, RB.velocity) * RB.velocity.magnitude * AirDrag * ForwardDragFactor);
-                //Debug.DrawLine(UnderwaterCenter, UnderwaterCenter + ForwardDrag,Color.red);
-                Vector3 SideDrag = -transform.right *
-                    (Vector3.Dot(transform.right, RB.velocity) * RB.velocity.magnitude * AirDrag * SideDragFator);
-                //Debug.DrawLine(UnderwaterCenter, UnderwaterCenter + SideDrag, Color.red);
-                Vector3 UpwardDrag = -transform.up *
-                    (Vector3.Dot(transform.up, RB.velocity) * RB.velocity.magnitude * AirDrag * UpwardDragFactor);
-                //Debug.DrawLine(UnderwaterCenter, UnderwaterCenter + UpwardDrag, Color.red);
-                RB.AddForceAtPosition((SideDrag + UpwardDrag) , transform.position - transform.forward *0.1f);//Do Not Use Forward Drag!!!! will Cause ship drift.
-                RB.AddForceAtPosition(ForwardDrag , transform.position - transform.forward * 2);//forward Drag must line up with the thrust!!
-                //Debug.DrawLine(transform.position, transform.position + (SideDrag + UpwardDrag + ForwardDrag) * UnderWaterParts.Count/100f, Color.red);
-   
+        //Debug.DrawLine(UnderwaterCenter, UnderwaterCenter + ForwardDrag,Color.red);
+        Vector3 SideDrag = -transform.right *
+            (Vector3.Dot(transform.right, RB.velocity) * RB.velocity.magnitude * AirDrag * SideDragFator);
+        //Debug.DrawLine(UnderwaterCenter, UnderwaterCenter + SideDrag, Color.red);
+        Vector3 UpwardDrag = -transform.up *
+            (Vector3.Dot(transform.up, RB.velocity) * RB.velocity.magnitude * AirDrag * UpwardDragFactor);
+        //Debug.DrawLine(UnderwaterCenter, UnderwaterCenter + UpwardDrag, Color.red);
+        RB.AddForceAtPosition((SideDrag + UpwardDrag), transform.position - transform.forward * 0.1f);//Do Not Use Forward Drag!!!! will Cause ship drift.
+        RB.AddForceAtPosition(ForwardDrag, transform.position - transform.forward * 2);//forward Drag must line up with the thrust!!
+                                                                                       //Debug.DrawLine(transform.position, transform.position + (SideDrag + UpwardDrag + ForwardDrag) * UnderWaterParts.Count/100f, Color.red);
+    }
+
+    void AddForces_Thrust()
+    {
         //***************************************Thrust&rudder&elevator************************************************
         switch (M_SteerType)
         {
@@ -131,10 +146,10 @@ public class Missile_Movement : MonoBehaviour {
                     RencorrectVector.z = 0f;
                     RencorrectVector = transform.TransformVector(RencorrectVector);
                     Vector3 TrustVector = S_point[0].forward * Thrust;
-                    //if(M_ISEngineActive)
-                    RB.AddForceAtPosition(TrustVector, S_point[0].position);
+                    if(M_ISEngineActive)
+                        RB.AddForceAtPosition(TrustVector, S_point[0].position);
                     float ForwardAirSpeed = Vector3.Dot(RB.velocity, transform.forward);
-                    RB.AddForceAtPosition((-RencorrectVector - (Vector3.up * 0.1f) / transform.position.y) * ForwardAirSpeed *0.6f, S_point[0].position);
+                    RB.AddForceAtPosition((-RencorrectVector - (Vector3.up * 0.1f) / transform.position.y) * ForwardAirSpeed * 0.6f, S_point[0].position);
                     Debug.DrawLine(S_point[0].position, TrustVector + S_point[0].position, Color.green);
                     break;
                 }
@@ -146,11 +161,7 @@ public class Missile_Movement : MonoBehaviour {
                     Debug.DrawLine(S_point[0].position, FinalTrustVector + S_point[0].position, Color.green);
                     break;
                 }
-
         }
-          
-
-        
     }
 
     private void OnTriggerEnter(Collider other)
