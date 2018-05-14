@@ -7,6 +7,7 @@ public class Missile_Movement : MonoBehaviour {
     [HideInInspector] public Rigidbody RB;
     [HideInInspector] public CalculateSurfacePoint SurfacePointCal;
     public float Thrust = 10;
+    public float BoosterActiveTime = 4;
 
     public float ExplosionForce = 10000;
     //List<Transform> B_Points = new List<Transform>();
@@ -36,6 +37,7 @@ public class Missile_Movement : MonoBehaviour {
     //Quaternion CurrentRotation;
 
     public GameObject ExplosionParticle;
+    public VFX_RefleSetup VFX_Setup;
 
     public SteerType M_SteerType;
 
@@ -62,10 +64,12 @@ public class Missile_Movement : MonoBehaviour {
             //ElevatorMesh = Children[i];
             if (Children[i].name.Contains("S_Point"))
                 S_point.Add(Children[i]);
-            if (Children[i].name.Contains("_Booter"))
+            if (Children[i].name.Contains("_Booster"))
                 Boosters.Add(Children[i]);
         }
         RB.centerOfMass = COMoffset;
+
+        VFX_Setup = GetComponent<VFX_RefleSetup>();
     }
 
     // Use this for initialization
@@ -75,11 +79,11 @@ public class Missile_Movement : MonoBehaviour {
     }
     private void Update()
     {
-        /*
+        
         EngineBurnTime += Time.deltaTime;
-        if (EngineBurnTime > 3 && M_ISEngineActive == true)
+        if (EngineBurnTime > BoosterActiveTime && M_ISEngineActive == true)
             DetachBooster();
-            */
+        
 
     }
 
@@ -101,8 +105,12 @@ public class Missile_Movement : MonoBehaviour {
         if(transform.position.y <= 0)
             Explode();
 
-        AddForces_Drag();
-        AddForces_Thrust();
+        if (M_ISActive)
+        {
+            AddForces_Drag();
+            AddForces_Thrust();
+        }
+        
     }
 
     void AddForces_Drag()
@@ -145,12 +153,23 @@ public class Missile_Movement : MonoBehaviour {
                     RencorrectVector = transform.InverseTransformVector(RencorrectVector);
                     RencorrectVector.z = 0f;
                     RencorrectVector = transform.TransformVector(RencorrectVector);
-                    Vector3 TrustVector = S_point[0].forward * Thrust;
-                    if(M_ISEngineActive)
+
+                    if (M_ISEngineActive)
+                    {
+                        Vector3 TrustVector = S_point[0].forward * Thrust;
                         RB.AddForceAtPosition(TrustVector, S_point[0].position);
+                        Debug.DrawLine(S_point[0].position, TrustVector + S_point[0].position, Color.green);
+                    }
+                    else
+                    {
+                        Vector3 TrustVector = S_point[0].forward * Thrust * 0.5f;
+                        RB.AddForceAtPosition(TrustVector, S_point[0].position);
+                        Debug.DrawLine(S_point[0].position, TrustVector + S_point[0].position, Color.red);
+                    }
+                        
                     float ForwardAirSpeed = Vector3.Dot(RB.velocity, transform.forward);
                     RB.AddForceAtPosition((-RencorrectVector - (Vector3.up * 0.1f) / transform.position.y) * ForwardAirSpeed * 0.6f, S_point[0].position);
-                    Debug.DrawLine(S_point[0].position, TrustVector + S_point[0].position, Color.green);
+                    
                     break;
                 }
             case SteerType.VectorThrust:
@@ -204,27 +223,37 @@ public class Missile_Movement : MonoBehaviour {
 
     public void ActiveWeapon()
     {
+        foreach (var S in S_point)
+        {
+            S.gameObject.SetActive(true);
+        }
         S_point[0].gameObject.SetActive(true);
-        //VFX_Setup.enabled = true;
+        VFX_Setup.enabled = true;
         GetComponent<Rigidbody>().isKinematic = false;
         M_ISActive = true;
         IsInBarrel = true;
         //StartCoroutine(ArmCountDown());
-        //transform.parent = null;
+        transform.parent = null;
     }
 
     public void DeactiveWeapon()
     {
         M_ISActive = false;
         GetComponent<Rigidbody>().isKinematic = true;
-        S_point[0].gameObject.SetActive(false);
-       // VFX_Setup.enabled = false;
+        foreach (var S in S_point)
+        {
+            S.gameObject.SetActive(false);
+        }
+        VFX_Setup.enabled = false;
     }
 
     private void DetachBooster()
     {
         M_ISEngineActive = false;
-
+        Boosters[0].parent = null;
+        Boosters[0].gameObject.AddComponent<Rigidbody>();
+        Boosters[0].GetComponent<Rigidbody>().velocity = RB.velocity;
+        Destroy(Boosters[0].gameObject , 3f);
     }
 }
 

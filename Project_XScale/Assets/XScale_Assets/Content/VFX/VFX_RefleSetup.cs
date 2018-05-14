@@ -21,11 +21,14 @@ public class VFX_RefleSetup : MonoBehaviour {
 
         Copy_ParticleObject = Instantiate(ParticleObject, ParticleObject.transform.position, ParticleObject.transform.rotation, ThisParent);
 
-        ParticleObject.layer = LayerMask.NameToLayer("PreRenderVFX");
-        Copy_ParticleObject.layer = LayerMask.NameToLayer("Default");
+        //ParticleObject.layer = LayerMask.NameToLayer("PreRenderVFX");
+        //Copy_ParticleObject.layer = LayerMask.NameToLayer("Default");
 
-        PreRender = ParticleObject.GetComponent<ParticleSystemRenderer>();
-        PostRender = Copy_ParticleObject.GetComponent<ParticleSystemRenderer>();
+        PreRender = ParticleObject.GetComponentInChildren<ParticleSystemRenderer>();
+        PostRender = Copy_ParticleObject.GetComponentInChildren<ParticleSystemRenderer>();
+
+        PreRender.gameObject.layer = LayerMask.NameToLayer("PreRenderVFX");
+        PostRender.gameObject.layer = LayerMask.NameToLayer("Default");
 
         PreRender.sharedMaterial = PreRenderMAT;
         PostRender.sharedMaterial = PostRenderMAT;
@@ -39,13 +42,13 @@ public class VFX_RefleSetup : MonoBehaviour {
         
         if (MainCam.transform.position.y * ParticleObject.transform.position.y > 0)
         {
-            ParticleObject.layer = LayerMask.NameToLayer("PreRenderVFX");
-            Copy_ParticleObject.layer = LayerMask.NameToLayer("Default");
+            PreRender.gameObject.layer = LayerMask.NameToLayer("PreRenderVFX");
+            PostRender.gameObject.layer = LayerMask.NameToLayer("Default");
         }
         else
         {
-            ParticleObject.layer = LayerMask.NameToLayer("Default");
-            Copy_ParticleObject.layer = LayerMask.NameToLayer("PreRenderVFX");
+            PreRender.gameObject.layer = LayerMask.NameToLayer("Default");
+            PostRender.gameObject.layer = LayerMask.NameToLayer("PreRenderVFX");
         }
         
 	}

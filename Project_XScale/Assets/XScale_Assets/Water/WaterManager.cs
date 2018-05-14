@@ -53,7 +53,7 @@ public class WaterManager : MonoBehaviour {
        
         FocusedObject = PlayerCon.CurrentFocusedObject;
 
-        Vector3 DampPosition = Vector3.SmoothDamp(transform.position, FocusedObject.position,ref CurrentV, 2f);
+        Vector3 DampPosition = Vector3.SmoothDamp(transform.position, FocusedObject.position,ref CurrentV, 0.2f);
         transform.position = new Vector3(DampPosition.x,0,DampPosition.z);
         //将水面互动的参数传递给material
         Matrix4x4 ShipsRenderMatrix = Matrix4x4.zero;
