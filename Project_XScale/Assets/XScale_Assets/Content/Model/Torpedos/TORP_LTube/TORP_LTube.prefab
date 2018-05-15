@@ -337,6 +337,7 @@ MonoBehaviour:
   Thrust: 50
   SteerForce: 0.1
   ExplosionForce: 10000
+  MinDepth: 2.5
   RB: {fileID: 0}
   SurfacePointCal: {fileID: 0}
   WaterDrag: 1
@@ -351,6 +352,8 @@ MonoBehaviour:
   VFX_Setup: {fileID: 0}
   M_ISActive: 0
   M_ISArmed: 0
+  WeaponInSide: {fileID: 1323273143419840, guid: b970d0ce698f1dd40852ae06a326fa78,
+    type: 2}
   Torp_Type: 1
 --- !u!114 &114257199627718678
 MonoBehaviour:

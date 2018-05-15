@@ -70,6 +70,9 @@ public class Missile_Movement : MonoBehaviour {
         RB.centerOfMass = COMoffset;
 
         VFX_Setup = GetComponent<VFX_RefleSetup>();
+
+        InitialLocalPos = transform.localPosition;
+        InitialLocalRot = transform.localRotation;//记录初始的局部坐标
     }
 
     // Use this for initialization
@@ -79,7 +82,10 @@ public class Missile_Movement : MonoBehaviour {
     }
     private void Update()
     {
-        
+
+        if (IsInBarrel)
+            BarrelRestrict();//发射管中时，运动方向会受到限制
+
         EngineBurnTime += Time.deltaTime;
         if (EngineBurnTime > BoosterActiveTime && M_ISEngineActive == true)
             DetachBooster();
@@ -102,13 +108,14 @@ public class Missile_Movement : MonoBehaviour {
             TargetPos = TargetTransform.position;
         Debug.DrawLine(transform.position, TargetPos, Color.cyan);
 
-        if(transform.position.y <= 0)
-            Explode();
+        
 
         if (M_ISActive)
         {
             AddForces_Drag();
             AddForces_Thrust();
+            if (transform.position.y <= 0)
+                Explode();
         }
         
     }
@@ -185,8 +192,11 @@ public class Missile_Movement : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name);
-        Explode();
+        if(M_ISArmed)
+        { 
+            Debug.Log(other.gameObject.name + "IN CONTACT WITH " + gameObject.name);
+            Explode();
+        }
     }
 
     public void Explode()
@@ -233,7 +243,7 @@ public class Missile_Movement : MonoBehaviour {
         M_ISActive = true;
         IsInBarrel = true;
         //StartCoroutine(ArmCountDown());
-        transform.parent = null;
+        //transform.parent = null;
     }
 
     public void DeactiveWeapon()
@@ -254,6 +264,19 @@ public class Missile_Movement : MonoBehaviour {
         Boosters[0].gameObject.AddComponent<Rigidbody>();
         Boosters[0].GetComponent<Rigidbody>().velocity = RB.velocity;
         Destroy(Boosters[0].gameObject , 3f);
+    }
+
+    private void BarrelRestrict()
+    {
+        transform.localRotation = InitialLocalRot;
+        transform.localPosition = new Vector3(InitialLocalPos.x, InitialLocalPos.y, transform.localPosition.z);
+
+        if (transform.localPosition.z > BarrelLength)//脱离发射管，激活武器，不再限制方向，从发射车辆上面脱离
+        {
+            M_ISArmed = true;
+            IsInBarrel = false;
+            transform.parent = null;
+        }
     }
 }
 

@@ -53,6 +53,9 @@ public class Torpedo_Movement : MonoBehaviour {
     Vector3 InitialLocalPos;
     Quaternion InitialLocalRot;//记录初始的局部坐标
 
+    public GameObject WeaponInSide;
+    private GameObject WP;
+
 
 
     public enum Type
@@ -182,6 +185,19 @@ public class Torpedo_Movement : MonoBehaviour {
         IsInBarrel = true;
         //StartCoroutine(ArmCountDown());
         //transform.parent = null;
+        switch (Torp_Type)
+        {
+            case Type.MissileLaunchTube:
+                {
+                    WP = Instantiate(WeaponInSide, transform.position, transform.rotation, transform);
+                    //Torpedo_Movement TM = WP.GetComponent<Torpedo_Movement>();
+                    //TM.DeactiveWeapon();
+                    WP.SendMessage("DeactiveWeapon");
+                    //WP.GetComponent<Missile_Movement>().TargetTransform = TargetTransform;
+                    Debug.Log("Weapon: " + WeaponInSide.name + "Loaded ");
+                    break;
+                }
+        }
     }
 
     public void DeactiveWeapon()
@@ -341,5 +357,13 @@ public class Torpedo_Movement : MonoBehaviour {
         Destroy(Hatch.gameObject, 3f);
 
         RB.mass = 0.85f * RB.mass;
+
+        LaunchMissile();
+    }
+
+    void LaunchMissile()
+    {
+        WP.SendMessage("ActiveWeapon");
+        WP.GetComponent<Missile_Movement>().TargetTransform = TargetTransform;
     }
 }

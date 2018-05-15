@@ -37,7 +37,7 @@ public class Sub_WeaponManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetKey("f"))
+        if (Input.GetKeyDown("f"))
             foreach (var Torp_LP in Torp_LPs)
                 if (Torp_LP.childCount != 0)
                 {
@@ -51,8 +51,9 @@ public class Sub_WeaponManager : MonoBehaviour {
     private void Load_TorpLP(Transform LP, GameObject Weapon)
     {
         GameObject WP = Instantiate(Weapon, LP.position, LP.rotation, LP);
-        Torpedo_Movement TM = WP.GetComponent<Torpedo_Movement>();
-        TM.DeactiveWeapon();
+        //Torpedo_Movement TM = WP.GetComponent<Torpedo_Movement>();
+        //TM.DeactiveWeapon();
+        WP.SendMessage("DeactiveWeapon");
         Debug.Log("Weapon: " + Weapon.name + "Loaded in " + LP.name);
     }
 
@@ -60,7 +61,8 @@ public class Sub_WeaponManager : MonoBehaviour {
     {
         GameObject WP = LP.GetChild(0).gameObject;
         Torpedo_Movement TM = WP.GetComponent<Torpedo_Movement>();
-        TM.ActiveWeapon();
+        //TM.ActiveWeapon();
+        WP.SendMessage("ActiveWeapon");
         WP.transform.position = LP.position;
         WP.transform.rotation = LP.rotation;
         WP.GetComponent<Rigidbody>().velocity = RB.velocity;
