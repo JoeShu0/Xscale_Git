@@ -38,7 +38,7 @@ Shader "Custom/WaterShader_Test05"
 		//_Glossiness("Smoothness", Range(0,1)) = 0.5
 		//_Metallic("Metallic", Range(0,1)) = 0.0
 		_NormalMap("Normalmap", 2D) = "bump" {}
-		_NormalAddFactor("NormalAddFactor",range(0,1))=0.1
+		_NormalAddFactor("NormalAddFactor",range(0,2))=0.1
 
 		//_ReflColor("ReflectiveColor", Color) = (1,1,1,1)
 		_ReflecTexture("ReflecTexture", 2D) = "gray" {}
@@ -103,6 +103,7 @@ Shader "Custom/WaterShader_Test05"
 		fixed4 _Color;
 		float _TransParent;
 		sampler2D _NormalMap;
+		float4 _NormalMap_ST;
 		float _NormalAddFactor;
 		float _Specular;
 		float _Gloss;
@@ -475,8 +476,9 @@ Shader "Custom/WaterShader_Test05"
 	{
 		//fragOut o;//申明
 		
-		fixed3 norm = UnpackNormal(tex2D(_NormalMap, i.uv)) * _NormalAddFactor;
 		float3 worldPos = float3(i.TtoW0.w, i.TtoW1.w, i.TtoW2.w);
+		fixed3 norm = UnpackNormal(tex2D(_NormalMap, float2(worldPos.x / _PlaneSize + 0.5, worldPos.z / _PlaneSize + 0.5) * _NormalMap_ST.xy + _NormalMap_ST.zw)) ;
+		norm = (norm* _NormalAddFactor * i.BlendFactor.r + float3(0, 0, 1)*(1 - _NormalAddFactor *i.BlendFactor.r));
 		fixed3 worldViewDir = normalize(UnityWorldSpaceViewDir(worldPos));
 		fixed3 lightDir = normalize(UnityWorldSpaceLightDir(worldPos));
 		
@@ -571,7 +573,7 @@ Shader "Custom/WaterShader_Test05"
 			refracCol.rgb = lerp(_FogColor.rgb, refracCol.rgb, fogDensity);
 			*/
 			//fragColor.rgb = ((i.BlendFactor.r) * 5);
-			fragColor.rgb = (reflecColor * fresnel * _RefractionAmount + refracCol * (1 - fresnel * 1)*(0.5 + i.BlendFactor.r * 0.25)) + spec*0.5 +texColor * max(0, abs(i.BlendFactor.r) * (i.BlendFactor.r)*0.1)* _Color;
+			fragColor.rgb = (reflecColor * fresnel * _RefractionAmount + refracCol * (1 - fresnel * 1)*(0.5 + i.BlendFactor.r * 0.25)) + spec*0.5 +texColor * max(0, abs(i.BlendFactor.r) * (i.BlendFactor.r)*0.2)* _Color;
 			//fragColor.rgb = float3(1,0,0);
 		}
 		

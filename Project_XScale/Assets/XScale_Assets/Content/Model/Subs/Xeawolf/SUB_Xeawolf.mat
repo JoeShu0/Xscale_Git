@@ -23,7 +23,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CausticsTex:
-        m_Texture: {fileID: 2800000, guid: d369b4f8fd8c65749b66cd6bd6fefcf7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 93493b97c26653546bc1b406ad574f9b, type: 3}
         m_Scale: {x: 0.2, y: 0.2}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:

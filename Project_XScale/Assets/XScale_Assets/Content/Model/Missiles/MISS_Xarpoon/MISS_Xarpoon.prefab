@@ -820,7 +820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RB: {fileID: 0}
   SurfacePointCal: {fileID: 0}
-  Thrust: 400
+  Thrust: 200
   BoosterActiveTime: 12
   ExplosionForce: 100
   AirDrag: 2
