@@ -175,7 +175,7 @@ public class Missile_Movement : MonoBehaviour {
                     }
                         
                     float ForwardAirSpeed = Vector3.Dot(RB.velocity, transform.forward);
-                    RB.AddForceAtPosition((-RencorrectVector - (Vector3.up * 0.1f) / transform.position.y) * ForwardAirSpeed * 0.6f, S_point[0].position);
+                    RB.AddForceAtPosition((-RencorrectVector - (Vector3.up * 0.1f) / transform.position.y) * ForwardAirSpeed * SteerForce * 5f, S_point[0].position);
                     
                     break;
                 }

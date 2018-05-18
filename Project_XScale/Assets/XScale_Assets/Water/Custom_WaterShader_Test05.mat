@@ -32,12 +32,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: f245b1a707b7761479e644608f969103, type: 3}
-        m_Scale: {x: 40, y: 40}
+        m_Scale: {x: 80, y: 80}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
         m_Texture: {fileID: 2800000, guid: 6d68ddb681c91d54ab97cf15203b0816, type: 3}
-        m_Scale: {x: 10, y: 10}
-        m_Offset: {x: 0, y: 0}
+        m_Scale: {x: 15, y: 15}
+        m_Offset: {x: 0.02, y: 0.02}
     - _ReflecDepthTexture:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -65,7 +65,7 @@ Material:
     - _MinDist: 50
     - _MovingDirection: 0
     - _MovingSpeed: 100
-    - _NormalAddFactor: 1
+    - _NormalAddFactor: 0.8
     - _PlaneSize: 500
     - _ReflecDistortion: 800
     - _RefrMaxDistance: 703
@@ -84,7 +84,7 @@ Material:
     - _Tessellation: 25
     - _TransParent: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.4764595, g: 0.7830188, b: 0.7716925, a: 1}
     - _FogColor: {r: 0.09926471, g: 0.18762678, b: 0.25, a: 1}
     - _ReflColor: {r: 1, g: 1, b: 1, a: 1}
     - _TestPositionInput: {r: 0, g: 0, b: 0, a: 0}

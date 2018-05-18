@@ -828,7 +828,7 @@ MonoBehaviour:
   ForwardDragFactor: 0.005
   SideDragFator: 0.25
   UpwardDragFactor: 0.25
-  SteerForce: 0.1
+  SteerForce: 0.05
   M_ISActive: 0
   M_ISArmed: 0
   M_ISEngineActive: 1
