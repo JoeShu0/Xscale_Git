@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: SUB_Xeawolf
+  m_Name: Ship_Xurk
   m_Shader: {fileID: 4800000, guid: 1bfbe5fc4eb3b094aacf6bf09c4e11e0, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -23,8 +23,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CausticsTex:
-        m_Texture: {fileID: 2800000, guid: 8bb3432007864da4192682860a81b576, type: 3}
-        m_Scale: {x: 0.2, y: 0.2}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
         m_Texture: {fileID: 0}
@@ -47,7 +47,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e59b73dcf44d7c0439c4d8055673e597, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -76,8 +76,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
-    - _CausticsFactor: 0.16
-    - _CausticsScale: 6.5
+    - _CausticsFactor: 1
+    - _CausticsScale: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -96,6 +96,6 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _CausticsDrift: {r: 1, g: 1, b: 1, a: 1}
-    - _CausticsFadeDistance: {r: 15, g: 50, b: 0, a: 0}
+    - _CausticsFadeDistance: {r: 15, g: 100, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
