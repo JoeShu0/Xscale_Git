@@ -36,6 +36,7 @@ ModelImporter:
     100060: S_point_001
     100062: Ship_Front_Point
     100064: //RootNode
+    100066: Rudder_point_01
     400000: B_Group
     400002: B_point_001
     400004: B_point_002
@@ -69,6 +70,7 @@ ModelImporter:
     400060: S_point_001
     400062: Ship_Front_Point
     400064: //RootNode
+    400066: Rudder_point_01
     2100000: 02 - Default
     2300000: Mesh_Xurk
     3300000: Mesh_Xurk

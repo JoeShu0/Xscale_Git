@@ -1744,7 +1744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 1.12, z: -30}
+  m_FollowOffset: {x: 0, y: 1.12, z: -45}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -4481,7 +4481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 1.12, z: -30}
+  m_FollowOffset: {x: 0, y: 1.12, z: -45}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -12288,7 +12288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 1.12, z: -30}
+  m_FollowOffset: {x: 0, y: 1.12, z: -45}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -13000,7 +13000,7 @@ MonoBehaviour:
   MAXBuoyancyDepth: 9.5
   WaterDrag: 1
   COMoffset: {x: 0, y: 0, z: 0}
-  Thrust: 2000
+  Thrust: 1500
   ForwardDragFactor: 0.15
   SideDragFator: 1
   UpwardDragFactor: 1

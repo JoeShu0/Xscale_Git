@@ -10,11 +10,11 @@ FBXHeaderExtension:  {
 		Version: 1000
 		Year: 2018
 		Month: 6
-		Day: 6
-		Hour: 23
-		Minute: 34
-		Second: 17
-		Millisecond: 546
+		Day: 10
+		Hour: 22
+		Minute: 46
+		Second: 33
+		Millisecond: 382
 	}
 	Creator: "FBX SDK/FBX Plugins version 2016.1"
 	SceneInfo: "SceneInfo::GlobalInfo", "UserData" {
@@ -36,13 +36,13 @@ FBXHeaderExtension:  {
 			P: "Original|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "Original|ApplicationName", "KString", "", "", "3ds Max"
 			P: "Original|ApplicationVersion", "KString", "", "", "2014"
-			P: "Original|DateTime_GMT", "DateTime", "", "", "06/06/2018 15:34:17.544"
+			P: "Original|DateTime_GMT", "DateTime", "", "", "10/06/2018 14:46:33.377"
 			P: "Original|FileName", "KString", "", "", "E:\CREATE\Unity_Project\Xscale_Git\Project_XScale\Assets\XScale_Assets\Content\Model\Ships\Xurk\Ship_Xurk.FBX"
 			P: "LastSaved", "Compound", "", ""
 			P: "LastSaved|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "LastSaved|ApplicationName", "KString", "", "", "3ds Max"
 			P: "LastSaved|ApplicationVersion", "KString", "", "", "2014"
-			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "06/06/2018 15:34:17.544"
+			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "10/06/2018 14:46:33.377"
 		}
 	}
 }
@@ -77,7 +77,7 @@ GlobalSettings:  {
 
 Documents:  {
 	Count: 1
-	Document: 2459405872, "", "Scene" {
+	Document: 1430367136, "", "Scene" {
 		Properties70:  {
 			P: "SourceObject", "object", "", ""
 			P: "ActiveAnimStackName", "KString", "", "", ""
@@ -97,7 +97,7 @@ References:  {
 
 Definitions:  {
 	Version: 100
-	Count: 72
+	Count: 74
 	ObjectType: "GlobalSettings" {
 		Count: 1
 	}
@@ -130,7 +130,7 @@ Definitions:  {
 		}
 	}
 	ObjectType: "Model" {
-		Count: 33
+		Count: 34
 		PropertyTemplate: "FbxNode" {
 			Properties70:  {
 				P: "QuaternionInterpolate", "enum", "", "",0
@@ -208,7 +208,7 @@ Definitions:  {
 		}
 	}
 	ObjectType: "NodeAttribute" {
-		Count: 32
+		Count: 33
 		PropertyTemplate: "FbxNull" {
 			Properties70:  {
 				P: "Color", "ColorRGB", "Color", "",0.8,0.8,0.8
@@ -276,103 +276,103 @@ Definitions:  {
 ;------------------------------------------------------------------
 
 Objects:  {
-	NodeAttribute: 2160261456, "NodeAttribute::", "Null" {
+	NodeAttribute: 2160552080, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160256880, "NodeAttribute::", "Null" {
+	NodeAttribute: 2160552608, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160254240, "NodeAttribute::", "Null" {
+	NodeAttribute: 2160553312, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160261280, "NodeAttribute::", "Null" {
+	NodeAttribute: 1236839488, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160260224, "NodeAttribute::", "Null" {
+	NodeAttribute: 1236839840, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160253360, "NodeAttribute::", "Null" {
+	NodeAttribute: 1236839664, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160254416, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163286464, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160260400, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163287168, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160260576, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163285408, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160254592, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163284880, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160255824, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163284352, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160252304, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163286288, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160255648, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163285936, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160257056, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163284704, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160261632, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163287344, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160251072, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163284176, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160261808, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163285760, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160261984, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163284528, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160256704, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163285056, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160251776, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163285232, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160253712, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163287520, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160257232, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163285584, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160251424, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163286816, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160254064, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163286112, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160252480, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163286640, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160256176, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163286992, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160252832, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163287696, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160253184, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163287872, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160255296, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163081024, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160256352, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163079264, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160257408, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163079792, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 2160257760, "NodeAttribute::", "Null" {
+	NodeAttribute: 2163080320, "NodeAttribute::", "Null" {
 		TypeFlags: "Null"
 	}
-	Geometry: 2377766800, "Geometry::", "Mesh" {
+	Geometry: 2318769408, "Geometry::", "Mesh" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.87843137254902,0.337254901960784,0.337254901960784
 		}
@@ -1896,7 +1896,10 @@ Objects:  {
 			}
 		}
 	}
-	Model: 2368764144, "Model::Ship_Xurk", "Null" {
+	NodeAttribute: 2158094016, "NodeAttribute::", "Null" {
+		TypeFlags: "Null"
+	}
+	Model: 2162287024, "Model::Ship_Xurk", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -1916,7 +1919,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368794832, "Model::B_Group", "Null" {
+	Model: 2162284832, "Model::B_Group", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -1935,7 +1938,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368766336, "Model::B_point_001", "Null" {
+	Model: 2162289216, "Model::B_point_001", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -1954,7 +1957,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368788256, "Model::B_point_002", "Null" {
+	Model: 2162300176, "Model::B_point_002", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -1973,7 +1976,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368781680, "Model::B_point_003", "Null" {
+	Model: 2162295792, "Model::B_point_003", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -1992,7 +1995,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368797024, "Model::B_point_023", "Null" {
+	Model: 2162291408, "Model::B_point_023", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2011,7 +2014,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368777296, "Model::B_point_024", "Null" {
+	Model: 2162293600, "Model::B_point_024", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2030,7 +2033,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368799216, "Model::B_point_025", "Null" {
+	Model: 2162302368, "Model::B_point_025", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2049,7 +2052,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368801408, "Model::B_point_026", "Null" {
+	Model: 2162308944, "Model::B_point_026", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2068,7 +2071,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368783872, "Model::B_point_027", "Null" {
+	Model: 2162297984, "Model::B_point_027", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2087,7 +2090,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368772912, "Model::B_point_028", "Null" {
+	Model: 2162304560, "Model::B_point_028", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2106,7 +2109,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368803600, "Model::B_point_029", "Null" {
+	Model: 2162306752, "Model::B_point_029", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2125,7 +2128,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368775104, "Model::B_point_030", "Null" {
+	Model: 2162311136, "Model::B_point_030", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2144,7 +2147,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368805792, "Model::B_point_031", "Null" {
+	Model: 2162282640, "Model::B_point_031", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2163,7 +2166,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368807984, "Model::B_point_032", "Null" {
+	Model: 2162328672, "Model::B_point_032", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2182,7 +2185,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368779488, "Model::B_point_033", "Null" {
+	Model: 2162326480, "Model::B_point_033", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2201,7 +2204,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368810176, "Model::B_point_034", "Null" {
+	Model: 2162330864, "Model::B_point_034", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2220,7 +2223,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368823328, "Model::B_point_035", "Null" {
+	Model: 2162319904, "Model::B_point_035", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2239,7 +2242,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368825520, "Model::B_point_036", "Null" {
+	Model: 2162315520, "Model::B_point_036", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2258,7 +2261,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368812368, "Model::B_point_037", "Null" {
+	Model: 2162322096, "Model::B_point_037", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2277,7 +2280,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368827712, "Model::B_point_038", "Null" {
+	Model: 2162317712, "Model::B_point_038", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2296,7 +2299,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368821136, "Model::B_point_039", "Null" {
+	Model: 2162324288, "Model::B_point_039", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2315,7 +2318,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368814560, "Model::B_point_040", "Null" {
+	Model: 2162313328, "Model::B_point_040", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2334,7 +2337,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368816752, "Model::B_point_041", "Null" {
+	Model: 2162346208, "Model::B_point_041", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2353,7 +2356,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368818944, "Model::B_point_042", "Null" {
+	Model: 2162339632, "Model::B_point_042", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2372,7 +2375,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368837888, "Model::B_point_043", "Null" {
+	Model: 2162354976, "Model::B_point_043", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2391,7 +2394,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368857616, "Model::B_point_044", "Null" {
+	Model: 2162344016, "Model::B_point_044", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2410,7 +2413,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368859808, "Model::B_point_045", "Null" {
+	Model: 2162357168, "Model::B_point_045", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2429,7 +2432,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368855424, "Model::B_point_046", "Null" {
+	Model: 2162348400, "Model::B_point_046", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2448,7 +2451,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368846656, "Model::B_point_047", "Null" {
+	Model: 2162350592, "Model::B_point_047", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2467,7 +2470,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368848848, "Model::Ship_Front_Point", "Null" {
+	Model: 2162361552, "Model::Ship_Front_Point", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2486,13 +2489,13 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368840080, "Model::S_point_001", "Null" {
+	Model: 2162352784, "Model::S_point_001", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
 			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
 			P: "DefaultAttributeIndex", "int", "Integer", "",0
-			P: "Lcl Translation", "Lcl Translation", "", "A",0,-0.00012207028339617,-1847.033203125
+			P: "Lcl Translation", "Lcl Translation", "", "A",0,-100.695335388184,-2145.00756835938
 			P: "mr displacement use global settings", "Bool", "", "AU",1
 			P: "mr displacement view dependent", "Bool", "", "AU",1
 			P: "mr displacement method", "Integer", "", "AU",6,6,6
@@ -2505,7 +2508,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2368851040, "Model::Mesh_Xurk", "Mesh" {
+	Model: 2162333056, "Model::Mesh_Xurk", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -2526,7 +2529,26 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Material: 1233773552, "Material::02 - Default", "" {
+	Model: 2162359360, "Model::Rudder_point_01", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",0,-100.695358276367,-2283.97827148438
+			P: "mr displacement use global settings", "Bool", "", "AU",1
+			P: "mr displacement view dependent", "Bool", "", "AU",1
+			P: "mr displacement method", "Integer", "", "AU",6,6,6
+			P: "mr displacement smoothing on", "Bool", "", "AU",1
+			P: "mr displacement edge length", "Number", "", "AU",2,2,2
+			P: "mr displacement max displace", "Number", "", "AU",20,20,20
+			P: "mr displacement parametric subdivision level", "Integer", "", "AU",5,5,5
+			P: "MaxHandle", "int", "Integer", "UH",579
+		}
+		Shading: T
+		Culling: "CullingOff"
+	}
+	Material: 2128784768, "Material::02 - Default", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -2548,12 +2570,12 @@ Objects:  {
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	CollectionExclusive: 1331209264, "DisplayLayer::Low_Poly_Prop", "DisplayLayer" {
+	CollectionExclusive: 1414458912, "DisplayLayer::Low_Poly_Prop", "DisplayLayer" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.607843137254902,0,0.156862745098039
 		}
 	}
-	CollectionExclusive: 1331193712, "DisplayLayer::Low_Poly_Fuselage", "DisplayLayer" {
+	CollectionExclusive: 1414459872, "DisplayLayer::Low_Poly_Fuselage", "DisplayLayer" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0,0.0156862745098039,0.372549019607843
 		}
@@ -2566,206 +2588,212 @@ Objects:  {
 Connections:  {
 	
 	;Model::Ship_Xurk, Model::RootNode
-	C: "OO",2368764144,0
+	C: "OO",2162287024,0
 	
 	;AnimLayer::BaseLayer, AnimStack::Take 001
-	C: "OO",2379835872,2378608464
+	C: "OO",1756595440,2148603696
 	
 	;Model::B_Group, Model::Ship_Xurk
-	C: "OO",2368794832,2368764144
+	C: "OO",2162284832,2162287024
 	
 	;Model::Ship_Front_Point, Model::Ship_Xurk
-	C: "OO",2368848848,2368764144
+	C: "OO",2162361552,2162287024
 	
 	;Model::S_point_001, Model::Ship_Xurk
-	C: "OO",2368840080,2368764144
+	C: "OO",2162352784,2162287024
 	
 	;Model::Mesh_Xurk, Model::Ship_Xurk
-	C: "OO",2368851040,2368764144
+	C: "OO",2162333056,2162287024
+	
+	;Model::Rudder_point_01, Model::Ship_Xurk
+	C: "OO",2162359360,2162287024
 	
 	;NodeAttribute::, Model::Ship_Xurk
-	C: "OO",2160261456,2368764144
+	C: "OO",2160552080,2162287024
 	
 	;Model::B_point_001, Model::B_Group
-	C: "OO",2368766336,2368794832
+	C: "OO",2162289216,2162284832
 	
 	;Model::B_point_002, Model::B_Group
-	C: "OO",2368788256,2368794832
+	C: "OO",2162300176,2162284832
 	
 	;Model::B_point_003, Model::B_Group
-	C: "OO",2368781680,2368794832
+	C: "OO",2162295792,2162284832
 	
 	;Model::B_point_023, Model::B_Group
-	C: "OO",2368797024,2368794832
+	C: "OO",2162291408,2162284832
 	
 	;Model::B_point_024, Model::B_Group
-	C: "OO",2368777296,2368794832
+	C: "OO",2162293600,2162284832
 	
 	;Model::B_point_025, Model::B_Group
-	C: "OO",2368799216,2368794832
+	C: "OO",2162302368,2162284832
 	
 	;Model::B_point_026, Model::B_Group
-	C: "OO",2368801408,2368794832
+	C: "OO",2162308944,2162284832
 	
 	;Model::B_point_027, Model::B_Group
-	C: "OO",2368783872,2368794832
+	C: "OO",2162297984,2162284832
 	
 	;Model::B_point_028, Model::B_Group
-	C: "OO",2368772912,2368794832
+	C: "OO",2162304560,2162284832
 	
 	;Model::B_point_029, Model::B_Group
-	C: "OO",2368803600,2368794832
+	C: "OO",2162306752,2162284832
 	
 	;Model::B_point_030, Model::B_Group
-	C: "OO",2368775104,2368794832
+	C: "OO",2162311136,2162284832
 	
 	;Model::B_point_031, Model::B_Group
-	C: "OO",2368805792,2368794832
+	C: "OO",2162282640,2162284832
 	
 	;Model::B_point_032, Model::B_Group
-	C: "OO",2368807984,2368794832
+	C: "OO",2162328672,2162284832
 	
 	;Model::B_point_033, Model::B_Group
-	C: "OO",2368779488,2368794832
+	C: "OO",2162326480,2162284832
 	
 	;Model::B_point_034, Model::B_Group
-	C: "OO",2368810176,2368794832
+	C: "OO",2162330864,2162284832
 	
 	;Model::B_point_035, Model::B_Group
-	C: "OO",2368823328,2368794832
+	C: "OO",2162319904,2162284832
 	
 	;Model::B_point_036, Model::B_Group
-	C: "OO",2368825520,2368794832
+	C: "OO",2162315520,2162284832
 	
 	;Model::B_point_037, Model::B_Group
-	C: "OO",2368812368,2368794832
+	C: "OO",2162322096,2162284832
 	
 	;Model::B_point_038, Model::B_Group
-	C: "OO",2368827712,2368794832
+	C: "OO",2162317712,2162284832
 	
 	;Model::B_point_039, Model::B_Group
-	C: "OO",2368821136,2368794832
+	C: "OO",2162324288,2162284832
 	
 	;Model::B_point_040, Model::B_Group
-	C: "OO",2368814560,2368794832
+	C: "OO",2162313328,2162284832
 	
 	;Model::B_point_041, Model::B_Group
-	C: "OO",2368816752,2368794832
+	C: "OO",2162346208,2162284832
 	
 	;Model::B_point_042, Model::B_Group
-	C: "OO",2368818944,2368794832
+	C: "OO",2162339632,2162284832
 	
 	;Model::B_point_043, Model::B_Group
-	C: "OO",2368837888,2368794832
+	C: "OO",2162354976,2162284832
 	
 	;Model::B_point_044, Model::B_Group
-	C: "OO",2368857616,2368794832
+	C: "OO",2162344016,2162284832
 	
 	;Model::B_point_045, Model::B_Group
-	C: "OO",2368859808,2368794832
+	C: "OO",2162357168,2162284832
 	
 	;Model::B_point_046, Model::B_Group
-	C: "OO",2368855424,2368794832
+	C: "OO",2162348400,2162284832
 	
 	;Model::B_point_047, Model::B_Group
-	C: "OO",2368846656,2368794832
+	C: "OO",2162350592,2162284832
 	
 	;NodeAttribute::, Model::B_Group
-	C: "OO",2160256880,2368794832
+	C: "OO",2160552608,2162284832
 	
 	;NodeAttribute::, Model::B_point_001
-	C: "OO",2160254240,2368766336
+	C: "OO",2160553312,2162289216
 	
 	;NodeAttribute::, Model::B_point_002
-	C: "OO",2160261280,2368788256
+	C: "OO",1236839488,2162300176
 	
 	;NodeAttribute::, Model::B_point_003
-	C: "OO",2160260224,2368781680
+	C: "OO",1236839840,2162295792
 	
 	;NodeAttribute::, Model::B_point_023
-	C: "OO",2160253360,2368797024
+	C: "OO",1236839664,2162291408
 	
 	;NodeAttribute::, Model::B_point_024
-	C: "OO",2160254416,2368777296
+	C: "OO",2163286464,2162293600
 	
 	;NodeAttribute::, Model::B_point_025
-	C: "OO",2160260400,2368799216
+	C: "OO",2163287168,2162302368
 	
 	;NodeAttribute::, Model::B_point_026
-	C: "OO",2160260576,2368801408
+	C: "OO",2163285408,2162308944
 	
 	;NodeAttribute::, Model::B_point_027
-	C: "OO",2160254592,2368783872
+	C: "OO",2163284880,2162297984
 	
 	;NodeAttribute::, Model::B_point_028
-	C: "OO",2160255824,2368772912
+	C: "OO",2163284352,2162304560
 	
 	;NodeAttribute::, Model::B_point_029
-	C: "OO",2160252304,2368803600
+	C: "OO",2163286288,2162306752
 	
 	;NodeAttribute::, Model::B_point_030
-	C: "OO",2160255648,2368775104
+	C: "OO",2163285936,2162311136
 	
 	;NodeAttribute::, Model::B_point_031
-	C: "OO",2160257056,2368805792
+	C: "OO",2163284704,2162282640
 	
 	;NodeAttribute::, Model::B_point_032
-	C: "OO",2160261632,2368807984
+	C: "OO",2163287344,2162328672
 	
 	;NodeAttribute::, Model::B_point_033
-	C: "OO",2160251072,2368779488
+	C: "OO",2163284176,2162326480
 	
 	;NodeAttribute::, Model::B_point_034
-	C: "OO",2160261808,2368810176
+	C: "OO",2163285760,2162330864
 	
 	;NodeAttribute::, Model::B_point_035
-	C: "OO",2160261984,2368823328
+	C: "OO",2163284528,2162319904
 	
 	;NodeAttribute::, Model::B_point_036
-	C: "OO",2160256704,2368825520
+	C: "OO",2163285056,2162315520
 	
 	;NodeAttribute::, Model::B_point_037
-	C: "OO",2160251776,2368812368
+	C: "OO",2163285232,2162322096
 	
 	;NodeAttribute::, Model::B_point_038
-	C: "OO",2160253712,2368827712
+	C: "OO",2163287520,2162317712
 	
 	;NodeAttribute::, Model::B_point_039
-	C: "OO",2160257232,2368821136
+	C: "OO",2163285584,2162324288
 	
 	;NodeAttribute::, Model::B_point_040
-	C: "OO",2160251424,2368814560
+	C: "OO",2163286816,2162313328
 	
 	;NodeAttribute::, Model::B_point_041
-	C: "OO",2160254064,2368816752
+	C: "OO",2163286112,2162346208
 	
 	;NodeAttribute::, Model::B_point_042
-	C: "OO",2160252480,2368818944
+	C: "OO",2163286640,2162339632
 	
 	;NodeAttribute::, Model::B_point_043
-	C: "OO",2160256176,2368837888
+	C: "OO",2163286992,2162354976
 	
 	;NodeAttribute::, Model::B_point_044
-	C: "OO",2160252832,2368857616
+	C: "OO",2163287696,2162344016
 	
 	;NodeAttribute::, Model::B_point_045
-	C: "OO",2160253184,2368859808
+	C: "OO",2163287872,2162357168
 	
 	;NodeAttribute::, Model::B_point_046
-	C: "OO",2160255296,2368855424
+	C: "OO",2163081024,2162348400
 	
 	;NodeAttribute::, Model::B_point_047
-	C: "OO",2160256352,2368846656
+	C: "OO",2163079264,2162350592
 	
 	;NodeAttribute::, Model::Ship_Front_Point
-	C: "OO",2160257408,2368848848
+	C: "OO",2163079792,2162361552
 	
 	;NodeAttribute::, Model::S_point_001
-	C: "OO",2160257760,2368840080
+	C: "OO",2163080320,2162352784
 	
 	;Geometry::, Model::Mesh_Xurk
-	C: "OO",2377766800,2368851040
+	C: "OO",2318769408,2162333056
 	
 	;Material::02 - Default, Model::Mesh_Xurk
-	C: "OO",1233773552,2368851040
+	C: "OO",2128784768,2162333056
+	
+	;NodeAttribute::, Model::Rudder_point_01
+	C: "OO",2158094016,2162359360
 }
